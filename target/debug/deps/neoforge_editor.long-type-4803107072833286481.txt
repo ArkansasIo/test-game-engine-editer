@@ -1,0 +1,1 @@
+HashMap<(Uuid, std::string::String), serde_json::Value>

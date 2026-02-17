@@ -1,0 +1,12 @@
+[package]
+name = "neoforge_runtime"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["serde"] }
+thiserror = "1"
+neoforge_graph = { path = "../neoforge_graph" }
+neoforge_plugins = { path = "../neoforge_plugins" }

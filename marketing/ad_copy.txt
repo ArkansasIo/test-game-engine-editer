@@ -1,0 +1,9 @@
+NeoForge Studio (Rust) — Build Worlds Faster
+
+• Dockable editor UI (original design)
+• Visual node graphs for tools + runtime
+• 2D & 3D workflows from the same project
+• Town generation pipeline (adapter ready)
+
+Tagline: Create. Connect. Construct.
+CTA: Download the editor scaffold and start building today.

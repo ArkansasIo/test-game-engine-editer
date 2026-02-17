@@ -1,0 +1,14 @@
+C:\Users\Shadow\Documents\NeoForgeStudio-Rust-UELayoutInspired\target\debug\deps\serde-a5f2cd2f6b8776f4.d: C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\Shadow\Documents\NeoForgeStudio-Rust-UELayoutInspired\target\debug\build\serde-a3d5cc7c79f19dbb\out/private.rs
+
+C:\Users\Shadow\Documents\NeoForgeStudio-Rust-UELayoutInspired\target\debug\deps\libserde-a5f2cd2f6b8776f4.rlib: C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\Shadow\Documents\NeoForgeStudio-Rust-UELayoutInspired\target\debug\build\serde-a3d5cc7c79f19dbb\out/private.rs
+
+C:\Users\Shadow\Documents\NeoForgeStudio-Rust-UELayoutInspired\target\debug\deps\libserde-a5f2cd2f6b8776f4.rmeta: C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\Shadow\Documents\NeoForgeStudio-Rust-UELayoutInspired\target\debug\build\serde-a3d5cc7c79f19dbb\out/private.rs
+
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+C:\Users\Shadow\Documents\NeoForgeStudio-Rust-UELayoutInspired\target\debug\build\serde-a3d5cc7c79f19dbb\out/private.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\Shadow\\Documents\\NeoForgeStudio-Rust-UELayoutInspired\\target\\debug\\build\\serde-a3d5cc7c79f19dbb\\out

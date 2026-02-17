@@ -1,0 +1,19 @@
+[package]
+name = "neoforge_editor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.27", default-features = true }
+egui = "0.27"
+egui_dock = "0.12"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rfd = "0.14"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde", "clock"] }
+neoforge_core = { path = "../../crates/neoforge_core" }
+neoforge_graph = { path = "../../crates/neoforge_graph" }
+neoforge_runtime = { path = "../../crates/neoforge_runtime" }
+neoforge_plugins = { path = "../../crates/neoforge_plugins" }
+towngen_adapter = { path = "../../crates/towngen_adapter" }
