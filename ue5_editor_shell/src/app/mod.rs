@@ -32,6 +32,14 @@ impl EditorApp {
 
 impl eframe::App for EditorApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        // Apply theme if changed
+        match self.ui_state.theme_name() {
+            "Dark" => crate::app::theme::apply_editor_theme(ctx),
+            "Light" => egui::Visuals::light().apply(ctx),
+            "Classic" => egui::Visuals::classic().apply(ctx),
+            _ => crate::app::theme::apply_editor_theme(ctx),
+        }
+
         // Global keyboard shortcuts
         self.ui_state.hotkeys.update(ctx, &mut self.ui_state.pending_commands);
         // Top menu + toolbar (UE-like)

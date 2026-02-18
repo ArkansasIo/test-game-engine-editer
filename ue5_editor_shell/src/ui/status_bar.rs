@@ -23,6 +23,22 @@ pub fn draw_status_bar(ctx: &egui::Context, app: &mut EditorApp) {
                 ui.separator();
                 ui.label(format!("View: {:?}", app.app_core.view_mode()));
                 ui.separator();
+                ui.label(format!(
+                    "Scene/Level: {}/{}",
+                    app.project
+                        .scenes
+                        .get(app.project.active_scene)
+                        .map(|s| s.name.as_str())
+                        .unwrap_or("None"),
+                    app.project
+                        .levels
+                        .get(app.project.active_level)
+                        .map(|l| l.name.as_str())
+                        .unwrap_or("None")
+                ));
+                ui.separator();
+                ui.label(format!("Resources: {}", app.project.resources.len()));
+                ui.separator();
                 if let Some(task) = app.app_core.build_progress().active {
                     ui.label(format!("Build: {:?} complete", task));
                 } else {

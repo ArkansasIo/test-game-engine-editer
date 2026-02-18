@@ -55,6 +55,13 @@ pub struct UiState {
     pub content_filter: String,
     pub rename_actor_buffer: String,
     pub add_content_buffer: String,
+    pub new_scene_buffer: String,
+    pub new_level_buffer: String,
+    pub new_resource_buffer: String,
+    pub theme: String,
+    pub selected_scene: Option<usize>,
+    pub selected_level: Option<usize>,
+    pub selected_resource: Option<usize>,
     pub status_text: String,
     pub show_about_window: bool,
     pub show_developer_window: bool,
@@ -81,6 +88,12 @@ impl Default for UiState {
             content_filter: String::new(),
             rename_actor_buffer: String::new(),
             add_content_buffer: String::new(),
+            new_scene_buffer: String::new(),
+            new_level_buffer: String::new(),
+            new_resource_buffer: String::new(),
+            selected_scene: Some(0),
+            selected_level: Some(0),
+            selected_resource: Some(0),
             status_text: "Ready".to_owned(),
             show_about_window: false,
             show_developer_window: false,
@@ -88,11 +101,20 @@ impl Default for UiState {
             show_help_info_window: false,
             undo_stack: Vec::new(),
             redo_stack: Vec::new(),
+            theme: "Dark".to_string(),
         }
     }
 }
 
 impl UiState {
+    pub fn theme_name(&self) -> &str {
+        &self.theme
+    }
+
+    pub fn set_theme(&mut self, theme: &str) {
+        self.theme = theme.to_string();
+        // Theme application logic will be handled in the main app update loop
+    }
     pub fn enqueue(&mut self, cmd: EditorCommand) {
         self.pending_commands.push(cmd);
     }
@@ -106,6 +128,21 @@ impl UiState {
         if let Some(idx) = self.selected_content {
             if idx >= project.content_items.len() {
                 self.selected_content = project.content_items.len().checked_sub(1);
+            }
+        }
+        if let Some(idx) = self.selected_scene {
+            if idx >= project.scenes.len() {
+                self.selected_scene = project.scenes.len().checked_sub(1);
+            }
+        }
+        if let Some(idx) = self.selected_level {
+            if idx >= project.levels.len() {
+                self.selected_level = project.levels.len().checked_sub(1);
+            }
+        }
+        if let Some(idx) = self.selected_resource {
+            if idx >= project.resources.len() {
+                self.selected_resource = project.resources.len().checked_sub(1);
             }
         }
     }
@@ -131,6 +168,15 @@ impl UiState {
 
 pub fn draw_docked_layout(ctx: &egui::Context, app: &mut EditorApp) {
     dock::draw(ctx, app);
+    // Show settings panel as a modal window if requested
+    if app.ui_state.show_settings {
+        egui::Window::new("Settings")
+            .open(&mut app.ui_state.show_settings)
+            .resizable(true)
+            .show(ctx, |ui| {
+                crate::ui::panels::settings::draw(ui, app);
+            });
+    }
 }
 
 pub fn draw_blueprint_window(ctx: &egui::Context, app: &mut EditorApp) {

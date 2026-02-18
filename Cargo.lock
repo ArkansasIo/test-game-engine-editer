@@ -2844,6 +2844,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "neoforge_game"
+version = "0.1.0"
+
+[[package]]
 name = "neoforge_graph"
 version = "0.1.0"
 dependencies = [

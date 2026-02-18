@@ -16,6 +16,7 @@ pub enum PanelId {
     ContentBrowser,
     WorldOutliner,
     Details,
+    Settings,
 }
 
 pub struct PanelBehavior<'a> {
@@ -31,6 +32,7 @@ impl egui_tiles::Behavior<PanelId> for PanelBehavior<'_> {
             PanelId::ContentBrowser => "Content Browser".into(),
             PanelId::WorldOutliner => "World Outliner".into(),
             PanelId::Details => "Details".into(),
+            PanelId::Settings => "Settings".into(),
         }
     }
     fn pane_ui(&mut self, ui: &mut egui::Ui, _tile_id: egui_tiles::TileId, pane: &mut PanelId) -> egui_tiles::UiResponse {
@@ -44,6 +46,7 @@ impl egui_tiles::Behavior<PanelId> for PanelBehavior<'_> {
             PanelId::ContentBrowser => content_browser::draw(ui, &mut self.app.project),
             PanelId::WorldOutliner => world_outliner::draw(ui, &mut self.app.project),
             PanelId::Details => details::draw(ui, &mut self.app.project),
+            PanelId::Settings => crate::ui::panels::settings::draw(ui, self.app),
         }
         ui.spacing_mut().item_spacing = old;
         egui_tiles::UiResponse::None

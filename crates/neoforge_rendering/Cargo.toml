@@ -1,0 +1,8 @@
+[package]
+name = "neoforge_rendering"
+version = "0.1.0"
+edition = "2021"
+authors = ["NeoForge Contributors"]
+description = "Rendering engine module for NeoForge Engine (Project Arkadia)"
+
+[dependencies]

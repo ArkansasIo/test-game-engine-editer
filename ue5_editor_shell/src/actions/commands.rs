@@ -27,6 +27,21 @@ pub enum EditorCommand {
     SelectContent(usize),
     AddContent(String),
     RemoveContent,
+    SetActiveDimension(state::SceneDimension),
+    CreateScene {
+        name: String,
+        dimension: state::SceneDimension,
+    },
+    SelectScene(usize),
+    CreateLevel {
+        name: String,
+    },
+    SelectLevel(usize),
+    CreateResource {
+        name: String,
+        kind: state::ResourceKind,
+    },
+    RemoveResource,
     SetContentFilter(String),
     SetMode(state::EditorMode),
     SetLayoutPreset(ELayoutPreset),
@@ -240,6 +255,94 @@ fn apply_command(app: &mut EditorApp, command: EditorCommand) {
                     };
                     project.dirty = true;
                     project.log(format!("[LogContent] Removed content \"{}\".", item.name));
+                }
+            }
+        }
+        EditorCommand::SetActiveDimension(dimension) => {
+            project.active_dimension = dimension;
+            project.log(format!("[LogScene] Switched to {} view.", dimension.label()));
+        }
+        EditorCommand::CreateScene { name, dimension } => {
+            let final_name = if name.trim().is_empty() {
+                format!("Scene_{}", project.scenes.len() + 1)
+            } else {
+                name.trim().to_owned()
+            };
+            ui_state.push_undo_snapshot(project);
+            project.create_scene(final_name.clone(), dimension);
+            ui_state.selected_scene = Some(project.active_scene);
+            project.log(format!(
+                "[LogScene] Created {} scene \"{}\".",
+                dimension.label(),
+                final_name
+            ));
+        }
+        EditorCommand::SelectScene(idx) => {
+            if let Some(scene) = project.scenes.get(idx) {
+                project.active_scene = idx;
+                project.active_dimension = scene.dimension;
+                ui_state.selected_scene = Some(idx);
+                project.log(format!("[LogScene] Active scene set to \"{}\".", scene.name));
+            }
+        }
+        EditorCommand::CreateLevel { name } => {
+            let final_name = if name.trim().is_empty() {
+                format!("Level_{}", project.levels.len() + 1)
+            } else {
+                name.trim().to_owned()
+            };
+            let (scene_name, dimension) = project
+                .scenes
+                .get(project.active_scene)
+                .map(|s| (s.name.clone(), s.dimension))
+                .unwrap_or_else(|| ("DefaultScene".to_owned(), project.active_dimension));
+            ui_state.push_undo_snapshot(project);
+            project.create_level(final_name.clone(), scene_name.clone(), dimension);
+            ui_state.selected_level = Some(project.active_level);
+            project.log(format!(
+                "[LogLevel] Created level \"{}\" in scene \"{}\".",
+                final_name, scene_name
+            ));
+        }
+        EditorCommand::SelectLevel(idx) => {
+            if let Some(level) = project.levels.get(idx) {
+                project.active_level = idx;
+                project.current_map = level.name.clone();
+                project.active_dimension = level.dimension;
+                ui_state.selected_level = Some(idx);
+                project.log(format!("[LogLevel] Active level set to \"{}\".", level.name));
+            }
+        }
+        EditorCommand::CreateResource { name, kind } => {
+            let final_name = if name.trim().is_empty() {
+                format!("{}_{:03}", kind.label(), project.resources.len() + 1)
+            } else {
+                name.trim().to_owned()
+            };
+            ui_state.push_undo_snapshot(project);
+            project.create_resource(final_name.clone(), kind);
+            ui_state.selected_resource = Some(project.resources.len() - 1);
+            project.log(format!(
+                "[LogResource] Created resource \"{}\" ({})",
+                final_name,
+                kind.label()
+            ));
+        }
+        EditorCommand::RemoveResource => {
+            if let Some(idx) = ui_state.selected_resource {
+                if idx < project.resources.len() {
+                    ui_state.push_undo_snapshot(project);
+                    let removed = project.resources.remove(idx);
+                    ui_state.selected_resource = if project.resources.is_empty() {
+                        None
+                    } else {
+                        Some(idx.min(project.resources.len() - 1))
+                    };
+                    project.log(format!(
+                        "[LogResource] Removed resource \"{}\".",
+                        removed.name
+                    ));
+                    project.dirty = true;
                 }
             }
         }

@@ -14,11 +14,28 @@ pub enum ViewMode {
 }
 
 #[derive(Clone, Copy, PartialEq, Eq)]
+pub enum SceneDimension {
+    D2,
+    D3,
+}
+
+#[derive(Clone, Copy, PartialEq, Eq)]
 pub enum ContentKind {
     StaticMesh,
     Material,
     Blueprint,
     Texture,
+}
+
+#[derive(Clone, Copy, PartialEq, Eq)]
+pub enum ResourceKind {
+    Texture,
+    StaticMesh,
+    Material,
+    Blueprint,
+    Audio,
+    Script,
+    LevelAsset,
 }
 
 #[derive(Clone, Copy)]
@@ -116,6 +133,25 @@ pub struct ContentItem {
 }
 
 #[derive(Clone)]
+pub struct SceneInfo {
+    pub name: String,
+    pub dimension: SceneDimension,
+}
+
+#[derive(Clone)]
+pub struct LevelInfo {
+    pub name: String,
+    pub scene_name: String,
+    pub dimension: SceneDimension,
+}
+
+#[derive(Clone)]
+pub struct EngineResource {
+    pub name: String,
+    pub kind: ResourceKind,
+}
+
+#[derive(Clone)]
 pub struct EditorSettings {
     pub show_grid: bool,
     pub realtime_viewport: bool,
@@ -144,6 +180,12 @@ pub struct ProjectState {
     pub settings: EditorSettings,
     pub stats: RuntimeStats,
     pub view_mode: ViewMode,
+    pub active_dimension: SceneDimension,
+    pub scenes: Vec<SceneInfo>,
+    pub levels: Vec<LevelInfo>,
+    pub resources: Vec<EngineResource>,
+    pub active_scene: usize,
+    pub active_level: usize,
     pub menu_options: MenuOptions,
     next_actor_id: u32,
 }
@@ -189,6 +231,38 @@ impl Default for ProjectState {
                 fps: 120,
             },
             view_mode: ViewMode::Lit,
+            active_dimension: SceneDimension::D3,
+            scenes: vec![
+                SceneInfo {
+                    name: "Main3DScene".to_owned(),
+                    dimension: SceneDimension::D3,
+                },
+                SceneInfo {
+                    name: "UI2DScene".to_owned(),
+                    dimension: SceneDimension::D2,
+                },
+            ],
+            levels: vec![
+                LevelInfo {
+                    name: "ExampleMap".to_owned(),
+                    scene_name: "Main3DScene".to_owned(),
+                    dimension: SceneDimension::D3,
+                },
+                LevelInfo {
+                    name: "HUDLevel".to_owned(),
+                    scene_name: "UI2DScene".to_owned(),
+                    dimension: SceneDimension::D2,
+                },
+            ],
+            resources: vec![
+                EngineResource::new("SM_Chair", ResourceKind::StaticMesh),
+                EngineResource::new("M_Wood", ResourceKind::Material),
+                EngineResource::new("BP_Door", ResourceKind::Blueprint),
+                EngineResource::new("T_Concrete", ResourceKind::Texture),
+                EngineResource::new("SFX_Click", ResourceKind::Audio),
+            ],
+            active_scene: 0,
+            active_level: 0,
             menu_options: MenuOptions::default(),
             next_actor_id: 5,
         }
@@ -252,6 +326,15 @@ impl ContentItem {
     }
 }
 
+impl EngineResource {
+    pub fn new(name: &str, kind: ResourceKind) -> Self {
+        Self {
+            name: name.to_owned(),
+            kind,
+        }
+    }
+}
+
 impl Default for Transform {
     fn default() -> Self {
         Self {
@@ -289,6 +372,30 @@ impl ProjectState {
         self.actors.push(SceneActor::new(id, base_name));
         self.dirty = true;
         id
+    }
+
+    pub fn create_scene(&mut self, name: String, dimension: SceneDimension) {
+        self.scenes.push(SceneInfo { name, dimension });
+        self.active_scene = self.scenes.len() - 1;
+        self.active_dimension = dimension;
+        self.dirty = true;
+    }
+
+    pub fn create_level(&mut self, name: String, scene_name: String, dimension: SceneDimension) {
+        self.levels.push(LevelInfo {
+            name: name.clone(),
+            scene_name,
+            dimension,
+        });
+        self.active_level = self.levels.len() - 1;
+        self.current_map = name;
+        self.active_dimension = dimension;
+        self.dirty = true;
+    }
+
+    pub fn create_resource(&mut self, name: String, kind: ResourceKind) {
+        self.resources.push(EngineResource::new(&name, kind));
+        self.dirty = true;
     }
 
     pub fn menu_option(&self, key: MenuOptionKey) -> bool {
@@ -365,6 +472,29 @@ impl ContentKind {
             ContentKind::Material => "Material",
             ContentKind::Blueprint => "Blueprint",
             ContentKind::Texture => "Texture",
+        }
+    }
+}
+
+impl SceneDimension {
+    pub fn label(self) -> &'static str {
+        match self {
+            SceneDimension::D2 => "2D",
+            SceneDimension::D3 => "3D",
+        }
+    }
+}
+
+impl ResourceKind {
+    pub fn label(self) -> &'static str {
+        match self {
+            ResourceKind::Texture => "Texture",
+            ResourceKind::StaticMesh => "StaticMesh",
+            ResourceKind::Material => "Material",
+            ResourceKind::Blueprint => "Blueprint",
+            ResourceKind::Audio => "Audio",
+            ResourceKind::Script => "Script",
+            ResourceKind::LevelAsset => "LevelAsset",
         }
     }
 }

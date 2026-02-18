@@ -2,7 +2,7 @@ use crate::{
     actions::commands::EditorCommand,
     app::EditorApp,
     editor_api::types::{ELayoutPreset, EViewportViewMode},
-    state::{EditorMode, MenuOptionKey},
+    state::{EditorMode, MenuOptionKey, ResourceKind, SceneDimension},
 };
 
 pub fn draw_top_menubar(ctx: &egui::Context, app: &mut EditorApp) {
@@ -89,8 +89,14 @@ fn edit_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Duplicate", EditorCommand::DuplicateActor);
         action(ui, app, "Delete", EditorCommand::DeleteActor);
         ui.separator();
-        action(ui, app, "Editor Preferences", EditorCommand::TogglePanelSettings);
-        action(ui, app, "Project Settings", EditorCommand::TogglePanelSettings);
+        if ui.button("Editor Preferences").clicked() {
+            app.ui_state.show_settings = true;
+            ui.close_menu();
+        }
+        if ui.button("Project Settings").clicked() {
+            app.ui_state.show_settings = true;
+            ui.close_menu();
+        }
         action(ui, app, "Plugins", log_command("Plugins manager opened."));
         action(ui, app, "Keyboard Shortcuts", log_command("Keyboard shortcuts panel opened."));
         action(ui, app, "Editor Utility Tools", log_command("Editor utility tools opened."));
@@ -261,6 +267,53 @@ fn level_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Level Blueprint", EditorCommand::TogglePanelBlueprint);
         action(ui, app, "World Settings", EditorCommand::TogglePanelSettings);
         ui.separator();
+        action(
+            ui,
+            app,
+            "Create New Level",
+            EditorCommand::CreateLevel {
+                name: String::new(),
+            },
+        );
+        ui.menu_button("Switch Level", |ui| {
+            for (i, level) in app.project.levels.iter().enumerate() {
+                if ui
+                    .selectable_label(app.project.active_level == i, &level.name)
+                    .clicked()
+                {
+                    app.ui_state.enqueue(EditorCommand::SelectLevel(i));
+                    ui.close_menu();
+                }
+            }
+        });
+        ui.menu_button("Scene Manager", |ui| {
+            if ui.button("Create 2D Scene").clicked() {
+                app.ui_state.enqueue(EditorCommand::CreateScene {
+                    name: String::new(),
+                    dimension: SceneDimension::D2,
+                });
+                ui.close_menu();
+            }
+            if ui.button("Create 3D Scene").clicked() {
+                app.ui_state.enqueue(EditorCommand::CreateScene {
+                    name: String::new(),
+                    dimension: SceneDimension::D3,
+                });
+                ui.close_menu();
+            }
+            ui.separator();
+            for (i, scene) in app.project.scenes.iter().enumerate() {
+                let label = format!("{} ({})", scene.name, scene.dimension.label());
+                if ui
+                    .selectable_label(app.project.active_scene == i, label)
+                    .clicked()
+                {
+                    app.ui_state.enqueue(EditorCommand::SelectScene(i));
+                    ui.close_menu();
+                }
+            }
+        });
+        ui.separator();
         ui.menu_button("Options", |ui| {
             option_toggle(ui, app, "Enable World Partition", MenuOptionKey::LevelWorldPartition);
             option_toggle(ui, app, "Enable Data Layers", MenuOptionKey::LevelDataLayers);
@@ -291,6 +344,25 @@ fn materials_fx_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Material Instances", log_command("Material instance editor opened."));
         action(ui, app, "Niagara Systems/Emitters", log_command("Niagara editor opened."));
         action(ui, app, "Post Process / Color Grading", log_command("Post process tools opened."));
+        ui.separator();
+        action(
+            ui,
+            app,
+            "Create Material Resource",
+            EditorCommand::CreateResource {
+                name: String::new(),
+                kind: ResourceKind::Material,
+            },
+        );
+        action(
+            ui,
+            app,
+            "Create Texture Resource",
+            EditorCommand::CreateResource {
+                name: String::new(),
+                kind: ResourceKind::Texture,
+            },
+        );
         ui.separator();
         ui.menu_button("Options", |ui| {
             option_toggle(
@@ -339,6 +411,20 @@ fn play_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
                 app,
                 "Wireframe",
                 EditorCommand::SetViewportMode(EViewportViewMode::Wireframe),
+            );
+        });
+        ui.menu_button("View Dimension", |ui| {
+            action(
+                ui,
+                app,
+                "2D",
+                EditorCommand::SetActiveDimension(SceneDimension::D2),
+            );
+            action(
+                ui,
+                app,
+                "3D",
+                EditorCommand::SetActiveDimension(SceneDimension::D3),
             );
         });
         ui.menu_button("Options", |ui| {

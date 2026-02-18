@@ -1,0 +1,10 @@
+pub mod rpg;
+pub mod fps;
+pub mod moba;
+pub mod platformer;
+pub mod strategy;
+pub mod adventure;
+pub mod simulation;
+pub mod puzzle;
+pub mod racing;
+pub mod sports;

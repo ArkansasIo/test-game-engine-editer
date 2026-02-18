@@ -1,7 +1,7 @@
 use crate::{
     actions::commands::EditorCommand,
     app::EditorApp,
-    state::{EditorMode, MenuOptionKey},
+    state::{EditorMode, MenuOptionKey, ResourceKind, SceneDimension},
 };
 
 pub fn draw(ctx: &egui::Context, app: &mut EditorApp) {
@@ -79,6 +79,30 @@ fn draw_left_modes(ctx: &egui::Context, app: &mut EditorApp) {
                 }
                 if ui.button("Toggle Visible").clicked() {
                     app.ui_state.enqueue(EditorCommand::ToggleActorVisibility);
+                }
+            });
+            ui.separator();
+            ui.label(egui::RichText::new("Scene View").strong());
+            ui.horizontal(|ui| {
+                if ui
+                    .selectable_label(
+                        app.project.active_dimension == SceneDimension::D2,
+                        "2D View",
+                    )
+                    .clicked()
+                {
+                    app.ui_state
+                        .enqueue(EditorCommand::SetActiveDimension(SceneDimension::D2));
+                }
+                if ui
+                    .selectable_label(
+                        app.project.active_dimension == SceneDimension::D3,
+                        "3D View",
+                    )
+                    .clicked()
+                {
+                    app.ui_state
+                        .enqueue(EditorCommand::SetActiveDimension(SceneDimension::D3));
                 }
             });
         });
@@ -189,6 +213,10 @@ fn draw_details(ui: &mut egui::Ui, app: &mut EditorApp) {
 
 fn draw_settings(ui: &mut egui::Ui, app: &mut EditorApp) {
     ui.heading("Project Settings");
+    draw_scene_level_system(ui, app);
+    ui.separator();
+    draw_resource_system(ui, app);
+    ui.separator();
     ui.horizontal(|ui| {
         let mut v = app.project.settings.show_grid;
         if ui.checkbox(&mut v, "Show Grid").changed() {
@@ -481,11 +509,13 @@ fn draw_viewport(ctx: &egui::Context, app: &mut EditorApp) {
             ui.separator();
             ui.label(format!("FPS: {}", app.project.stats.fps));
             ui.separator();
-            ui.label(match app.project.view_mode {
+        ui.label(match app.project.view_mode {
                 crate::state::ViewMode::Lit => "Lit",
                 crate::state::ViewMode::Unlit => "Unlit",
-                crate::state::ViewMode::Wireframe => "Wireframe",
-            });
+            crate::state::ViewMode::Wireframe => "Wireframe",
+        });
+            ui.separator();
+            ui.label(format!("Dimension: {}", app.project.active_dimension.label()));
         });
         ui.separator();
 
@@ -524,6 +554,106 @@ fn draw_viewport(ctx: &egui::Context, app: &mut EditorApp) {
         );
         ui.allocate_rect(available, egui::Sense::hover());
     });
+}
+
+fn draw_scene_level_system(ui: &mut egui::Ui, app: &mut EditorApp) {
+    ui.label(egui::RichText::new("Scene & Level Systems").strong());
+    ui.horizontal(|ui| {
+        ui.label("New Scene");
+        ui.text_edit_singleline(&mut app.ui_state.new_scene_buffer);
+    });
+    ui.horizontal(|ui| {
+        if ui.button("Create 2D Scene").clicked() {
+            app.ui_state.enqueue(EditorCommand::CreateScene {
+                name: app.ui_state.new_scene_buffer.clone(),
+                dimension: SceneDimension::D2,
+            });
+            app.ui_state.new_scene_buffer.clear();
+        }
+        if ui.button("Create 3D Scene").clicked() {
+            app.ui_state.enqueue(EditorCommand::CreateScene {
+                name: app.ui_state.new_scene_buffer.clone(),
+                dimension: SceneDimension::D3,
+            });
+            app.ui_state.new_scene_buffer.clear();
+        }
+    });
+    egui::ScrollArea::vertical().max_height(86.0).show(ui, |ui| {
+        for (i, scene) in app.project.scenes.iter().enumerate() {
+            let label = format!("{} ({})", scene.name, scene.dimension.label());
+            if ui
+                .selectable_label(app.project.active_scene == i, label)
+                .clicked()
+            {
+                app.ui_state.enqueue(EditorCommand::SelectScene(i));
+            }
+        }
+    });
+    ui.horizontal(|ui| {
+        ui.label("New Level");
+        ui.text_edit_singleline(&mut app.ui_state.new_level_buffer);
+        if ui.button("Create").clicked() {
+            app.ui_state.enqueue(EditorCommand::CreateLevel {
+                name: app.ui_state.new_level_buffer.clone(),
+            });
+            app.ui_state.new_level_buffer.clear();
+        }
+    });
+    egui::ScrollArea::vertical().max_height(86.0).show(ui, |ui| {
+        for (i, level) in app.project.levels.iter().enumerate() {
+            let label = format!(
+                "{} [{} / {}]",
+                level.name,
+                level.scene_name,
+                level.dimension.label()
+            );
+            if ui
+                .selectable_label(app.project.active_level == i, label)
+                .clicked()
+            {
+                app.ui_state.enqueue(EditorCommand::SelectLevel(i));
+            }
+        }
+    });
+}
+
+fn draw_resource_system(ui: &mut egui::Ui, app: &mut EditorApp) {
+    ui.label(egui::RichText::new("Engine Resource Systems").strong());
+    ui.horizontal(|ui| {
+        ui.label("Name");
+        ui.text_edit_singleline(&mut app.ui_state.new_resource_buffer);
+    });
+    ui.horizontal_wrapped(|ui| {
+        resource_button(ui, app, "Texture", ResourceKind::Texture);
+        resource_button(ui, app, "Mesh", ResourceKind::StaticMesh);
+        resource_button(ui, app, "Material", ResourceKind::Material);
+        resource_button(ui, app, "Blueprint", ResourceKind::Blueprint);
+        resource_button(ui, app, "Audio", ResourceKind::Audio);
+        resource_button(ui, app, "Script", ResourceKind::Script);
+        resource_button(ui, app, "LevelAsset", ResourceKind::LevelAsset);
+    });
+    if ui.button("Remove Selected Resource").clicked() {
+        app.ui_state.enqueue(EditorCommand::RemoveResource);
+    }
+    egui::ScrollArea::vertical().max_height(100.0).show(ui, |ui| {
+        for (i, res) in app.project.resources.iter().enumerate() {
+            let selected = app.ui_state.selected_resource == Some(i);
+            let label = format!("{} ({})", res.name, res.kind.label());
+            if ui.selectable_label(selected, label).clicked() {
+                app.ui_state.selected_resource = Some(i);
+            }
+        }
+    });
+}
+
+fn resource_button(ui: &mut egui::Ui, app: &mut EditorApp, label: &str, kind: ResourceKind) {
+    if ui.button(label).clicked() {
+        app.ui_state.enqueue(EditorCommand::CreateResource {
+            name: app.ui_state.new_resource_buffer.clone(),
+            kind,
+        });
+        app.ui_state.new_resource_buffer.clear();
+    }
 }
 
 fn mode_card(ui: &mut egui::Ui, app: &mut EditorApp, label: &str, mode: EditorMode) {

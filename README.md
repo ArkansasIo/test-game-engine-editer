@@ -51,6 +51,22 @@ cargo run -p neoforge_editor
 - Option command routing: `SetMenuOption` and `SetPlayClientCount` in `ue5_editor_shell/src/actions/commands.rs`.
 - Unified settings panel for all menu-feature options in `ue5_editor_shell/src/ui/dock.rs`.
 
+## 2D/3D Scene, Level, and Resource Systems
+- View systems:
+  - Active dimension switching (`2D` / `3D`) via toolbar, menus, and modes panel.
+  - View state stored in `ProjectState.active_dimension`.
+- Scene systems:
+  - Create/select scenes with per-scene dimension metadata.
+  - State and helpers in `ue5_editor_shell/src/state/mod.rs`.
+- Level systems:
+  - Create/select levels bound to scenes and dimensions.
+  - Active level updates current map context.
+- Resource systems:
+  - Create/remove engine resources (Texture, Mesh, Material, Blueprint, Audio, Script, LevelAsset).
+  - Managed through command routing + settings panel resource manager.
+- Command coverage:
+  - `SetActiveDimension`, `CreateScene`, `SelectScene`, `CreateLevel`, `SelectLevel`, `CreateResource`, `RemoveResource` in `ue5_editor_shell/src/actions/commands.rs`.
+
 ## External Source Integration
 - Integrated source roots:
   - `Eldiron-master`

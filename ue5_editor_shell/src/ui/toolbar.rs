@@ -2,7 +2,7 @@ use crate::{
     actions::commands::EditorCommand,
     app::EditorApp,
     editor_api::types::ELayoutPreset,
-    state::EditorMode,
+    state::{EditorMode, SceneDimension},
 };
 
 pub fn draw_toolbar(ctx: &egui::Context, app: &mut EditorApp) {
@@ -83,6 +83,26 @@ pub fn draw_toolbar(ctx: &egui::Context, app: &mut EditorApp) {
                 if ui.button("SC:Connect").clicked() {
                     app.ui_state
                         .enqueue(EditorCommand::ConnectSourceControl("Git".to_owned()));
+                }
+                ui.separator();
+                if ui.button("2D View").clicked() {
+                    app.ui_state
+                        .enqueue(EditorCommand::SetActiveDimension(SceneDimension::D2));
+                }
+                if ui.button("3D View").clicked() {
+                    app.ui_state
+                        .enqueue(EditorCommand::SetActiveDimension(SceneDimension::D3));
+                }
+                if ui.button("New Scene").clicked() {
+                    app.ui_state.enqueue(EditorCommand::CreateScene {
+                        name: String::new(),
+                        dimension: app.project.active_dimension,
+                    });
+                }
+                if ui.button("New Level").clicked() {
+                    app.ui_state.enqueue(EditorCommand::CreateLevel {
+                        name: String::new(),
+                    });
                 }
             });
         });

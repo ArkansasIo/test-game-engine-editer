@@ -5,6 +5,7 @@ members = [
   "crates/neoforge_graph",
   "crates/neoforge_runtime",
   "crates/neoforge_plugins",
+  "crates/neoforge_game",
   "crates/towngen_adapter",
   "apps/neoforge_editor",
   "engine_core",

@@ -1,0 +1,8 @@
+[package]
+name = "neoforge_game"
+version = "0.1.0"
+edition = "2021"
+authors = ["NeoForge Contributors"]
+description = "Gameplay framework for NeoForge Engine (Project Arkadia)"
+
+[dependencies]
