@@ -43,6 +43,8 @@ impl eframe::App for EditorApp {
         ui::status_bar::draw_status_bar(ctx, self);
         // Floating Blueprint window (like UE Blueprint Editor)
         ui::draw_blueprint_window(ctx, self);
+        // Help/About windows
+        ui::draw_help_windows(ctx, self);
         // Execute queued actions (API bridge between UI and logic)
         actions::commands::drain_and_apply(self);
         let _ = self.action_registry.action_count();

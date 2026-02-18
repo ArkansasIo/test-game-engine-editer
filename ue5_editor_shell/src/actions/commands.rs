@@ -45,6 +45,12 @@ pub enum EditorCommand {
     SetAutosave(bool),
     SetAutosaveMinutes(u32),
     SetRealtimeViewport(bool),
+    SetMenuOption(state::MenuOptionKey, bool),
+    SetPlayClientCount(u32),
+    ShowAboutWindow,
+    ShowDeveloperWindow,
+    ShowDocumentationWindow,
+    ShowHelpInfoWindow,
     Undo,
     Redo,
     ResetLayout,
@@ -77,19 +83,35 @@ fn apply_command(app: &mut EditorApp, command: EditorCommand) {
             ui_state.status_text = "Saved".to_owned();
         }
         EditorCommand::BuildLighting => {
+            if project.menu_options.file_auto_save_on_build {
+                project.dirty = false;
+                project.log("[LogSave] Auto-saved before build.");
+            }
             app.app_core.enqueue_build(EBuildTask::Lighting);
             project.stats.shader_jobs = 0;
             project.log("[LogBuild] Lighting build complete.");
         }
         EditorCommand::BuildGeometry => {
+            if project.menu_options.file_auto_save_on_build {
+                project.dirty = false;
+                project.log("[LogSave] Auto-saved before build.");
+            }
             app.app_core.enqueue_build(EBuildTask::Geometry);
             project.log("[LogBuild] Geometry build complete.");
         }
         EditorCommand::BuildNavigation => {
+            if project.menu_options.file_auto_save_on_build {
+                project.dirty = false;
+                project.log("[LogSave] Auto-saved before build.");
+            }
             app.app_core.enqueue_build(EBuildTask::Navigation);
             project.log("[LogBuild] Navigation build complete.");
         }
         EditorCommand::BuildAll => {
+            if project.menu_options.file_auto_save_on_build {
+                project.dirty = false;
+                project.log("[LogSave] Auto-saved before build.");
+            }
             app.app_core.enqueue_build(EBuildTask::All);
             project.log("[LogBuild] Build all complete.");
         }
@@ -98,7 +120,17 @@ fn apply_command(app: &mut EditorApp, command: EditorCommand) {
         }
         EditorCommand::PlayInEditor => {
             project.is_playing = true;
-            project.log("[LogPIE] Play In Editor started.");
+            if project.menu_options.play_start_in_simulate {
+                project.log("[LogPIE] Simulate mode started.");
+            } else {
+                project.log("[LogPIE] Play In Editor started.");
+            }
+            if project.menu_options.play_multiplayer_pie {
+                project.log(format!(
+                    "[LogPIE] Multiplayer PIE enabled with {} client(s).",
+                    project.menu_options.play_client_count
+                ));
+            }
         }
         EditorCommand::StopPlay => {
             project.is_playing = false;
@@ -250,6 +282,29 @@ fn apply_command(app: &mut EditorApp, command: EditorCommand) {
         EditorCommand::SetAutosave(v) => project.settings.autosave_enabled = v,
         EditorCommand::SetAutosaveMinutes(v) => project.settings.autosave_minutes = v.max(1),
         EditorCommand::SetRealtimeViewport(v) => project.settings.realtime_viewport = v,
+        EditorCommand::SetMenuOption(key, value) => {
+            project.set_menu_option(key, value);
+            project.dirty = true;
+        }
+        EditorCommand::SetPlayClientCount(v) => {
+            project.menu_options.play_client_count = v.max(1);
+        }
+        EditorCommand::ShowAboutWindow => {
+            ui_state.show_about_window = true;
+            project.log("[LogHelp] Opened About window.");
+        }
+        EditorCommand::ShowDeveloperWindow => {
+            ui_state.show_developer_window = true;
+            project.log("[LogHelp] Opened Developer window.");
+        }
+        EditorCommand::ShowDocumentationWindow => {
+            ui_state.show_documentation_window = true;
+            project.log("[LogHelp] Opened Documentation window.");
+        }
+        EditorCommand::ShowHelpInfoWindow => {
+            ui_state.show_help_info_window = true;
+            project.log("[LogHelp] Opened Help Info window.");
+        }
         EditorCommand::Undo => {
             if let Some(previous) = ui_state.undo_stack.pop() {
                 ui_state.redo_stack.push(project.clone());

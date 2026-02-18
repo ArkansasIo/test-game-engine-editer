@@ -46,3 +46,18 @@ cargo run -p neoforge_editor
 - Source control routing: connect/disconnect + status bar state.
 - Status bar: source control, shader jobs, FPS, layout preset, viewport mode, build state, status text.
 - Menu coverage: File, Edit, Window, Tools, Build, Select, Actor, Components, Level, Blueprints, Materials/FX, Cinematics, Play, Help.
+- Submenu options system: each top menu now has an `Options` submenu wired to typed state + commands.
+- Option state model: `MenuOptionKey` + `MenuOptions` in `ue5_editor_shell/src/state/mod.rs`.
+- Option command routing: `SetMenuOption` and `SetPlayClientCount` in `ue5_editor_shell/src/actions/commands.rs`.
+- Unified settings panel for all menu-feature options in `ue5_editor_shell/src/ui/dock.rs`.
+
+## External Source Integration
+- Integrated source roots:
+  - `Eldiron-master`
+  - `TownGeneratorOS-master`
+- `towngen_adapter` now indexes both folders in code:
+  - `crates/towngen_adapter/src/sources.rs`
+  - `crates/towngen_adapter/src/lib.rs`
+- `engine_core` exposes manifests for both folders:
+  - `engine_core/src/source_integrations.rs`
+  - `engine_core/src/lib.rs`

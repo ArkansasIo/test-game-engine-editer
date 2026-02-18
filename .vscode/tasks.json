@@ -20,6 +20,26 @@
 				"$rustc"
 			],
 			"group": "build"
+		},
+		{
+			"label": "Build UE5 Editor Shell",
+			"type": "shell",
+			"command": "cargo build --package ue5_editor_shell",
+			"isBackground": false,
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build UE5 Editor Shell",
+			"type": "shell",
+			"command": "cargo build --package ue5_editor_shell",
+			"isBackground": false,
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
 		}
 	]
 }

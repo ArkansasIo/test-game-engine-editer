@@ -2,7 +2,7 @@ use crate::{
     actions::commands::EditorCommand,
     app::EditorApp,
     editor_api::types::{ELayoutPreset, EViewportViewMode},
-    state::EditorMode,
+    state::{EditorMode, MenuOptionKey},
 };
 
 pub fn draw_top_menubar(ctx: &egui::Context, app: &mut EditorApp) {
@@ -68,6 +68,11 @@ fn file_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
             action(ui, app, "History", log_command("Open source history."));
         });
         ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Auto Save Before Build", MenuOptionKey::FileAutoSaveOnBuild);
+            option_toggle(ui, app, "Confirm On Exit", MenuOptionKey::FileConfirmOnExit);
+        });
+        ui.separator();
         action(ui, app, "Switch Project", log_command("Switch Project triggered."));
         action(ui, app, "Exit", log_command("Exit requested."));
     });
@@ -89,6 +94,16 @@ fn edit_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Plugins", log_command("Plugins manager opened."));
         action(ui, app, "Keyboard Shortcuts", log_command("Keyboard shortcuts panel opened."));
         action(ui, app, "Editor Utility Tools", log_command("Editor utility tools opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Multi Clipboard", MenuOptionKey::EditMultiClipboard);
+            option_toggle(
+                ui,
+                app,
+                "Transaction History",
+                MenuOptionKey::EditTransactionHistory,
+            );
+        });
     });
 }
 
@@ -111,6 +126,21 @@ fn window_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Session Frontend", log_command("Session Frontend opened."));
         action(ui, app, "Profiler", log_command("Profiler opened."));
         action(ui, app, "Additional Viewport", log_command("Spawn additional viewport."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(
+                ui,
+                app,
+                "Restore Last Layout",
+                MenuOptionKey::WindowRestoreLastLayout,
+            );
+            option_toggle(
+                ui,
+                app,
+                "Open Tabs In Foreground",
+                MenuOptionKey::WindowOpenTabsForeground,
+            );
+        });
     });
 }
 
@@ -130,6 +160,11 @@ fn tools_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Asset Audit", log_command("Asset audit opened."));
         action(ui, app, "Size Map", log_command("Size map opened."));
         action(ui, app, "Reference Viewer", log_command("Reference viewer opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Enable Experimental", MenuOptionKey::ToolsExperimental);
+            option_toggle(ui, app, "Auto Navmesh Update", MenuOptionKey::ToolsAutoNavmesh);
+        });
     });
 }
 
@@ -142,6 +177,11 @@ fn build_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Build Navigation", EditorCommand::BuildNavigation);
         action(ui, app, "Build All", EditorCommand::BuildAll);
         action(ui, app, "Build Configuration", log_command("Build configuration opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Include Shader Compile", MenuOptionKey::BuildIncludeShaders);
+            option_toggle(ui, app, "Incremental Build", MenuOptionKey::BuildIncremental);
+        });
     });
 }
 
@@ -155,6 +195,16 @@ fn select_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "By Layer", log_command("Select by layer."));
         action(ui, app, "Actors Using This Asset", log_command("Select actors using asset."));
         action(ui, app, "Selection Filters", log_command("Selection filters opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Select Hidden Actors", MenuOptionKey::SelectHiddenActors);
+            option_toggle(
+                ui,
+                app,
+                "Strict Type Filter",
+                MenuOptionKey::SelectStrictTypeFilter,
+            );
+        });
     });
 }
 
@@ -170,6 +220,16 @@ fn actor_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Ungroup", log_command("Ungroup actors."));
         action(ui, app, "Pivot Tools", log_command("Pivot tools opened."));
         action(ui, app, "Snap Tools", log_command("Snap tools opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Snap On Spawn", MenuOptionKey::ActorSnapOnSpawn);
+            option_toggle(
+                ui,
+                app,
+                "Auto Group Duplicates",
+                MenuOptionKey::ActorAutoGroupDuplicates,
+            );
+        });
     });
 }
 
@@ -179,6 +239,16 @@ fn components_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Edit Component Hierarchy", log_command("Component hierarchy opened."));
         action(ui, app, "Promote to Blueprint", log_command("Promote to blueprint."));
         action(ui, app, "Convert to BP Class", log_command("Convert to BP class."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Show Component Icons", MenuOptionKey::ComponentsShowIcons);
+            option_toggle(
+                ui,
+                app,
+                "Allow Dynamic Add",
+                MenuOptionKey::ComponentsAllowDynamicAdd,
+            );
+        });
     });
 }
 
@@ -190,6 +260,11 @@ fn level_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Lighting Scenarios", log_command("Lighting scenarios opened."));
         action(ui, app, "Level Blueprint", EditorCommand::TogglePanelBlueprint);
         action(ui, app, "World Settings", EditorCommand::TogglePanelSettings);
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Enable World Partition", MenuOptionKey::LevelWorldPartition);
+            option_toggle(ui, app, "Enable Data Layers", MenuOptionKey::LevelDataLayers);
+        });
     });
 }
 
@@ -202,6 +277,11 @@ fn blueprints_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Compile", EditorCommand::CompileBlueprints);
         action(ui, app, "Refresh Nodes", log_command("Refresh nodes."));
         action(ui, app, "Reparent Blueprint", log_command("Reparent blueprint dialog."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Live Compile", MenuOptionKey::BlueprintLiveCompile);
+            option_toggle(ui, app, "Break On Error", MenuOptionKey::BlueprintBreakOnError);
+        });
     });
 }
 
@@ -211,6 +291,21 @@ fn materials_fx_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Material Instances", log_command("Material instance editor opened."));
         action(ui, app, "Niagara Systems/Emitters", log_command("Niagara editor opened."));
         action(ui, app, "Post Process / Color Grading", log_command("Post process tools opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(
+                ui,
+                app,
+                "Realtime Material Preview",
+                MenuOptionKey::MaterialsRealtimePreview,
+            );
+            option_toggle(
+                ui,
+                app,
+                "Auto Compile FX",
+                MenuOptionKey::MaterialsAutoCompileFx,
+            );
+        });
     });
 }
 
@@ -220,6 +315,11 @@ fn cinematics_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "Take Recorder", log_command("Take recorder opened."));
         action(ui, app, "Camera Rig Tools", log_command("Camera rig tools opened."));
         action(ui, app, "Render Queue", log_command("Render queue opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Auto Keying", MenuOptionKey::CinematicsAutoKeying);
+            option_toggle(ui, app, "Lock Camera", MenuOptionKey::CinematicsLockCamera);
+        });
     });
 }
 
@@ -241,15 +341,46 @@ fn play_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
                 EditorCommand::SetViewportMode(EViewportViewMode::Wireframe),
             );
         });
+        ui.menu_button("Options", |ui| {
+            option_toggle(
+                ui,
+                app,
+                "Start In Simulate",
+                MenuOptionKey::PlayStartInSimulate,
+            );
+            option_toggle(
+                ui,
+                app,
+                "Enable Multiplayer PIE",
+                MenuOptionKey::PlayMultiplayerPie,
+            );
+            let mut clients = app.project.menu_options.play_client_count;
+            ui.horizontal(|ui| {
+                ui.label("PIE Clients");
+                if ui
+                    .add(egui::DragValue::new(&mut clients).speed(1.0).range(1..=16))
+                    .changed()
+                {
+                    app.ui_state.enqueue(EditorCommand::SetPlayClientCount(clients));
+                }
+            });
+        });
     });
 }
 
 fn help_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
     ui.menu_button("Help", |ui| {
-        action(ui, app, "Documentation", log_command("Documentation opened."));
+        action(ui, app, "Documentation", EditorCommand::ShowDocumentationWindow);
+        action(ui, app, "Developer Info", EditorCommand::ShowDeveloperWindow);
+        action(ui, app, "Help Info", EditorCommand::ShowHelpInfoWindow);
         action(ui, app, "Samples", log_command("Samples opened."));
-        action(ui, app, "About / Credits", log_command("About dialog opened."));
+        action(ui, app, "About / Credits", EditorCommand::ShowAboutWindow);
         action(ui, app, "Report a Bug", log_command("Bug report flow opened."));
+        ui.separator();
+        ui.menu_button("Options", |ui| {
+            option_toggle(ui, app, "Tips On Startup", MenuOptionKey::HelpTipsOnStartup);
+            option_toggle(ui, app, "Usage Analytics", MenuOptionKey::HelpUsageAnalytics);
+        });
         ui.separator();
         ui.label("Hotkeys:");
         for line in app.action_registry.action_hints() {
@@ -264,6 +395,13 @@ fn action(ui: &mut egui::Ui, app: &mut EditorApp, label: &str, cmd: EditorComman
     if ui.button(label).clicked() {
         app.ui_state.enqueue(cmd);
         ui.close_menu();
+    }
+}
+
+fn option_toggle(ui: &mut egui::Ui, app: &mut EditorApp, label: &str, key: MenuOptionKey) {
+    let mut value = app.project.menu_option(key);
+    if ui.checkbox(&mut value, label).changed() {
+        app.ui_state.enqueue(EditorCommand::SetMenuOption(key, value));
     }
 }
 

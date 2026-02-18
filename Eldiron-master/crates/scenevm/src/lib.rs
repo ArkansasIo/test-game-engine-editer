@@ -13,6 +13,7 @@ pub mod light;
 pub mod native_dialogs;
 pub mod poly2d;
 pub mod poly3d;
+pub mod systems;
 pub mod texture;
 #[cfg(feature = "ui")]
 pub mod ui;
@@ -54,6 +55,14 @@ pub mod prelude {
         light::{Light, LightType},
         poly2d::Poly2D,
         poly3d::Poly3D,
+        systems::{
+            EngineSystems,
+            build::{BuildState, BuildSystem, BuildTask},
+            command::{CommandContext, CommandRouter, EditorAction, Shortcut},
+            georeference::{EcefCoord, EnuCoord, GeoOrigin, GeoReferenceSystem, GeodeticCoord},
+            selection::{SelectionId, SelectionKind, SelectionService},
+            undo::{Transaction, UndoService},
+        },
         texture::Texture,
         vm::{Atom, GeoId, LayerBlendMode, LineStrip2D, RenderMode, VM},
     };
@@ -98,6 +107,14 @@ pub use crate::{
     light::{Light, LightType},
     poly2d::Poly2D,
     poly3d::Poly3D,
+    systems::{
+        EngineSystems,
+        build::{BuildState, BuildSystem, BuildTask},
+        command::{CommandContext, CommandRouter, EditorAction, Shortcut},
+        georeference::{EcefCoord, EnuCoord, GeoOrigin, GeoReferenceSystem, GeodeticCoord},
+        selection::{SelectionId, SelectionKind, SelectionService},
+        undo::{Transaction, UndoService},
+    },
     texture::Texture,
     vm::{Atom, GeoId, LayerBlendMode, LineStrip2D, RenderMode, VM},
 };

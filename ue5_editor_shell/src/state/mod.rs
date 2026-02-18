@@ -22,6 +22,71 @@ pub enum ContentKind {
 }
 
 #[derive(Clone, Copy)]
+pub enum MenuOptionKey {
+    FileAutoSaveOnBuild,
+    FileConfirmOnExit,
+    EditMultiClipboard,
+    EditTransactionHistory,
+    WindowRestoreLastLayout,
+    WindowOpenTabsForeground,
+    ToolsExperimental,
+    ToolsAutoNavmesh,
+    BuildIncludeShaders,
+    BuildIncremental,
+    SelectHiddenActors,
+    SelectStrictTypeFilter,
+    ActorSnapOnSpawn,
+    ActorAutoGroupDuplicates,
+    ComponentsShowIcons,
+    ComponentsAllowDynamicAdd,
+    LevelWorldPartition,
+    LevelDataLayers,
+    BlueprintLiveCompile,
+    BlueprintBreakOnError,
+    MaterialsRealtimePreview,
+    MaterialsAutoCompileFx,
+    CinematicsAutoKeying,
+    CinematicsLockCamera,
+    PlayStartInSimulate,
+    PlayMultiplayerPie,
+    HelpTipsOnStartup,
+    HelpUsageAnalytics,
+}
+
+#[derive(Clone)]
+pub struct MenuOptions {
+    pub file_auto_save_on_build: bool,
+    pub file_confirm_on_exit: bool,
+    pub edit_multi_clipboard: bool,
+    pub edit_transaction_history: bool,
+    pub window_restore_last_layout: bool,
+    pub window_open_tabs_foreground: bool,
+    pub tools_experimental: bool,
+    pub tools_auto_navmesh: bool,
+    pub build_include_shaders: bool,
+    pub build_incremental: bool,
+    pub select_hidden_actors: bool,
+    pub select_strict_type_filter: bool,
+    pub actor_snap_on_spawn: bool,
+    pub actor_auto_group_duplicates: bool,
+    pub components_show_icons: bool,
+    pub components_allow_dynamic_add: bool,
+    pub level_world_partition: bool,
+    pub level_data_layers: bool,
+    pub blueprint_live_compile: bool,
+    pub blueprint_break_on_error: bool,
+    pub materials_realtime_preview: bool,
+    pub materials_auto_compile_fx: bool,
+    pub cinematics_auto_keying: bool,
+    pub cinematics_lock_camera: bool,
+    pub play_start_in_simulate: bool,
+    pub play_multiplayer_pie: bool,
+    pub help_tips_on_startup: bool,
+    pub help_usage_analytics: bool,
+    pub play_client_count: u32,
+}
+
+#[derive(Clone, Copy)]
 pub struct Vec3 {
     pub x: f32,
     pub y: f32,
@@ -79,6 +144,7 @@ pub struct ProjectState {
     pub settings: EditorSettings,
     pub stats: RuntimeStats,
     pub view_mode: ViewMode,
+    pub menu_options: MenuOptions,
     next_actor_id: u32,
 }
 
@@ -123,7 +189,44 @@ impl Default for ProjectState {
                 fps: 120,
             },
             view_mode: ViewMode::Lit,
+            menu_options: MenuOptions::default(),
             next_actor_id: 5,
+        }
+    }
+}
+
+impl Default for MenuOptions {
+    fn default() -> Self {
+        Self {
+            file_auto_save_on_build: true,
+            file_confirm_on_exit: true,
+            edit_multi_clipboard: false,
+            edit_transaction_history: true,
+            window_restore_last_layout: true,
+            window_open_tabs_foreground: true,
+            tools_experimental: false,
+            tools_auto_navmesh: true,
+            build_include_shaders: true,
+            build_incremental: true,
+            select_hidden_actors: false,
+            select_strict_type_filter: false,
+            actor_snap_on_spawn: true,
+            actor_auto_group_duplicates: false,
+            components_show_icons: true,
+            components_allow_dynamic_add: true,
+            level_world_partition: true,
+            level_data_layers: true,
+            blueprint_live_compile: true,
+            blueprint_break_on_error: false,
+            materials_realtime_preview: true,
+            materials_auto_compile_fx: true,
+            cinematics_auto_keying: false,
+            cinematics_lock_camera: false,
+            play_start_in_simulate: false,
+            play_multiplayer_pie: false,
+            help_tips_on_startup: true,
+            help_usage_analytics: false,
+            play_client_count: 1,
         }
     }
 }
@@ -186,6 +289,72 @@ impl ProjectState {
         self.actors.push(SceneActor::new(id, base_name));
         self.dirty = true;
         id
+    }
+
+    pub fn menu_option(&self, key: MenuOptionKey) -> bool {
+        match key {
+            MenuOptionKey::FileAutoSaveOnBuild => self.menu_options.file_auto_save_on_build,
+            MenuOptionKey::FileConfirmOnExit => self.menu_options.file_confirm_on_exit,
+            MenuOptionKey::EditMultiClipboard => self.menu_options.edit_multi_clipboard,
+            MenuOptionKey::EditTransactionHistory => self.menu_options.edit_transaction_history,
+            MenuOptionKey::WindowRestoreLastLayout => self.menu_options.window_restore_last_layout,
+            MenuOptionKey::WindowOpenTabsForeground => self.menu_options.window_open_tabs_foreground,
+            MenuOptionKey::ToolsExperimental => self.menu_options.tools_experimental,
+            MenuOptionKey::ToolsAutoNavmesh => self.menu_options.tools_auto_navmesh,
+            MenuOptionKey::BuildIncludeShaders => self.menu_options.build_include_shaders,
+            MenuOptionKey::BuildIncremental => self.menu_options.build_incremental,
+            MenuOptionKey::SelectHiddenActors => self.menu_options.select_hidden_actors,
+            MenuOptionKey::SelectStrictTypeFilter => self.menu_options.select_strict_type_filter,
+            MenuOptionKey::ActorSnapOnSpawn => self.menu_options.actor_snap_on_spawn,
+            MenuOptionKey::ActorAutoGroupDuplicates => self.menu_options.actor_auto_group_duplicates,
+            MenuOptionKey::ComponentsShowIcons => self.menu_options.components_show_icons,
+            MenuOptionKey::ComponentsAllowDynamicAdd => self.menu_options.components_allow_dynamic_add,
+            MenuOptionKey::LevelWorldPartition => self.menu_options.level_world_partition,
+            MenuOptionKey::LevelDataLayers => self.menu_options.level_data_layers,
+            MenuOptionKey::BlueprintLiveCompile => self.menu_options.blueprint_live_compile,
+            MenuOptionKey::BlueprintBreakOnError => self.menu_options.blueprint_break_on_error,
+            MenuOptionKey::MaterialsRealtimePreview => self.menu_options.materials_realtime_preview,
+            MenuOptionKey::MaterialsAutoCompileFx => self.menu_options.materials_auto_compile_fx,
+            MenuOptionKey::CinematicsAutoKeying => self.menu_options.cinematics_auto_keying,
+            MenuOptionKey::CinematicsLockCamera => self.menu_options.cinematics_lock_camera,
+            MenuOptionKey::PlayStartInSimulate => self.menu_options.play_start_in_simulate,
+            MenuOptionKey::PlayMultiplayerPie => self.menu_options.play_multiplayer_pie,
+            MenuOptionKey::HelpTipsOnStartup => self.menu_options.help_tips_on_startup,
+            MenuOptionKey::HelpUsageAnalytics => self.menu_options.help_usage_analytics,
+        }
+    }
+
+    pub fn set_menu_option(&mut self, key: MenuOptionKey, value: bool) {
+        match key {
+            MenuOptionKey::FileAutoSaveOnBuild => self.menu_options.file_auto_save_on_build = value,
+            MenuOptionKey::FileConfirmOnExit => self.menu_options.file_confirm_on_exit = value,
+            MenuOptionKey::EditMultiClipboard => self.menu_options.edit_multi_clipboard = value,
+            MenuOptionKey::EditTransactionHistory => self.menu_options.edit_transaction_history = value,
+            MenuOptionKey::WindowRestoreLastLayout => self.menu_options.window_restore_last_layout = value,
+            MenuOptionKey::WindowOpenTabsForeground => self.menu_options.window_open_tabs_foreground = value,
+            MenuOptionKey::ToolsExperimental => self.menu_options.tools_experimental = value,
+            MenuOptionKey::ToolsAutoNavmesh => self.menu_options.tools_auto_navmesh = value,
+            MenuOptionKey::BuildIncludeShaders => self.menu_options.build_include_shaders = value,
+            MenuOptionKey::BuildIncremental => self.menu_options.build_incremental = value,
+            MenuOptionKey::SelectHiddenActors => self.menu_options.select_hidden_actors = value,
+            MenuOptionKey::SelectStrictTypeFilter => self.menu_options.select_strict_type_filter = value,
+            MenuOptionKey::ActorSnapOnSpawn => self.menu_options.actor_snap_on_spawn = value,
+            MenuOptionKey::ActorAutoGroupDuplicates => self.menu_options.actor_auto_group_duplicates = value,
+            MenuOptionKey::ComponentsShowIcons => self.menu_options.components_show_icons = value,
+            MenuOptionKey::ComponentsAllowDynamicAdd => self.menu_options.components_allow_dynamic_add = value,
+            MenuOptionKey::LevelWorldPartition => self.menu_options.level_world_partition = value,
+            MenuOptionKey::LevelDataLayers => self.menu_options.level_data_layers = value,
+            MenuOptionKey::BlueprintLiveCompile => self.menu_options.blueprint_live_compile = value,
+            MenuOptionKey::BlueprintBreakOnError => self.menu_options.blueprint_break_on_error = value,
+            MenuOptionKey::MaterialsRealtimePreview => self.menu_options.materials_realtime_preview = value,
+            MenuOptionKey::MaterialsAutoCompileFx => self.menu_options.materials_auto_compile_fx = value,
+            MenuOptionKey::CinematicsAutoKeying => self.menu_options.cinematics_auto_keying = value,
+            MenuOptionKey::CinematicsLockCamera => self.menu_options.cinematics_lock_camera = value,
+            MenuOptionKey::PlayStartInSimulate => self.menu_options.play_start_in_simulate = value,
+            MenuOptionKey::PlayMultiplayerPie => self.menu_options.play_multiplayer_pie = value,
+            MenuOptionKey::HelpTipsOnStartup => self.menu_options.help_tips_on_startup = value,
+            MenuOptionKey::HelpUsageAnalytics => self.menu_options.help_usage_analytics = value,
+        }
     }
 }
 

@@ -45,3 +45,4 @@ pub mod skeleton;
 pub mod sound;
 pub mod font;
 pub mod shader;
+pub mod source_integrations;

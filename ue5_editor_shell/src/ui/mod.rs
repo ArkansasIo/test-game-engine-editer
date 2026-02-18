@@ -2,6 +2,7 @@ use crate::{actions::commands::EditorCommand, app::EditorApp, state::ProjectStat
 
 pub mod blueprint;
 pub mod dock;
+pub mod help;
 pub mod status_bar;
 pub mod topbar;
 pub mod toolbar;
@@ -55,6 +56,10 @@ pub struct UiState {
     pub rename_actor_buffer: String,
     pub add_content_buffer: String,
     pub status_text: String,
+    pub show_about_window: bool,
+    pub show_developer_window: bool,
+    pub show_documentation_window: bool,
+    pub show_help_info_window: bool,
     pub undo_stack: Vec<ProjectState>,
     pub redo_stack: Vec<ProjectState>,
 }
@@ -77,6 +82,10 @@ impl Default for UiState {
             rename_actor_buffer: String::new(),
             add_content_buffer: String::new(),
             status_text: "Ready".to_owned(),
+            show_about_window: false,
+            show_developer_window: false,
+            show_documentation_window: false,
+            show_help_info_window: false,
             undo_stack: Vec::new(),
             redo_stack: Vec::new(),
         }
@@ -126,4 +135,8 @@ pub fn draw_docked_layout(ctx: &egui::Context, app: &mut EditorApp) {
 
 pub fn draw_blueprint_window(ctx: &egui::Context, app: &mut EditorApp) {
     blueprint::draw(ctx, app);
+}
+
+pub fn draw_help_windows(ctx: &egui::Context, app: &mut EditorApp) {
+    help::draw(ctx, app);
 }

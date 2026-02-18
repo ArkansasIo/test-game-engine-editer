@@ -1,4 +1,8 @@
-use crate::{actions::commands::EditorCommand, app::EditorApp, state::EditorMode};
+use crate::{
+    actions::commands::EditorCommand,
+    app::EditorApp,
+    state::{EditorMode, MenuOptionKey},
+};
 
 pub fn draw(ctx: &egui::Context, app: &mut EditorApp) {
     draw_left_modes(ctx, app);
@@ -224,6 +228,144 @@ fn draw_settings(ui: &mut egui::Ui, app: &mut EditorApp) {
         }
     });
     ui.separator();
+    ui.label(egui::RichText::new("Menu Options").strong());
+    menu_options_group(
+        ui,
+        app,
+        "File",
+        &[
+            ("Auto Save On Build", MenuOptionKey::FileAutoSaveOnBuild),
+            ("Confirm On Exit", MenuOptionKey::FileConfirmOnExit),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Edit",
+        &[
+            ("Multi Clipboard", MenuOptionKey::EditMultiClipboard),
+            ("Transaction History", MenuOptionKey::EditTransactionHistory),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Window",
+        &[
+            ("Restore Last Layout", MenuOptionKey::WindowRestoreLastLayout),
+            ("Open Tabs In Foreground", MenuOptionKey::WindowOpenTabsForeground),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Tools",
+        &[
+            ("Experimental Tools", MenuOptionKey::ToolsExperimental),
+            ("Auto Navmesh", MenuOptionKey::ToolsAutoNavmesh),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Build",
+        &[
+            ("Include Shaders", MenuOptionKey::BuildIncludeShaders),
+            ("Incremental Build", MenuOptionKey::BuildIncremental),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Select",
+        &[
+            ("Select Hidden Actors", MenuOptionKey::SelectHiddenActors),
+            ("Strict Type Filter", MenuOptionKey::SelectStrictTypeFilter),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Actor",
+        &[
+            ("Snap On Spawn", MenuOptionKey::ActorSnapOnSpawn),
+            ("Auto Group Duplicates", MenuOptionKey::ActorAutoGroupDuplicates),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Components",
+        &[
+            ("Show Icons", MenuOptionKey::ComponentsShowIcons),
+            ("Allow Dynamic Add", MenuOptionKey::ComponentsAllowDynamicAdd),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Level",
+        &[
+            ("World Partition", MenuOptionKey::LevelWorldPartition),
+            ("Data Layers", MenuOptionKey::LevelDataLayers),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Blueprints",
+        &[
+            ("Live Compile", MenuOptionKey::BlueprintLiveCompile),
+            ("Break On Error", MenuOptionKey::BlueprintBreakOnError),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Materials/FX",
+        &[
+            ("Realtime Preview", MenuOptionKey::MaterialsRealtimePreview),
+            ("Auto Compile FX", MenuOptionKey::MaterialsAutoCompileFx),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Cinematics",
+        &[
+            ("Auto Keying", MenuOptionKey::CinematicsAutoKeying),
+            ("Lock Camera", MenuOptionKey::CinematicsLockCamera),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Play",
+        &[
+            ("Start In Simulate", MenuOptionKey::PlayStartInSimulate),
+            ("Enable Multiplayer PIE", MenuOptionKey::PlayMultiplayerPie),
+        ],
+    );
+    menu_options_group(
+        ui,
+        app,
+        "Help",
+        &[
+            ("Tips On Startup", MenuOptionKey::HelpTipsOnStartup),
+            ("Usage Analytics", MenuOptionKey::HelpUsageAnalytics),
+        ],
+    );
+    ui.horizontal(|ui| {
+        ui.label("PIE Clients");
+        let mut clients = app.project.menu_options.play_client_count;
+        if ui
+            .add(egui::DragValue::new(&mut clients).speed(1.0).range(1..=16))
+            .changed()
+        {
+            app.ui_state.enqueue(EditorCommand::SetPlayClientCount(clients));
+        }
+    });
+    ui.separator();
     ui.label(egui::RichText::new("Loaded Modules").strong());
     egui::ScrollArea::vertical()
         .max_height(120.0)
@@ -235,6 +377,22 @@ fn draw_settings(ui: &mut egui::Ui, app: &mut EditorApp) {
                 ));
             }
         });
+}
+
+fn menu_options_group(
+    ui: &mut egui::Ui,
+    app: &mut EditorApp,
+    title: &str,
+    options: &[(&str, MenuOptionKey)],
+) {
+    ui.collapsing(title, |ui| {
+        for (label, key) in options {
+            let mut value = app.project.menu_option(*key);
+            if ui.checkbox(&mut value, *label).changed() {
+                app.ui_state.enqueue(EditorCommand::SetMenuOption(*key, value));
+            }
+        }
+    });
 }
 
 fn draw_content_browser(ui: &mut egui::Ui, app: &mut EditorApp) {
