@@ -38,6 +38,29 @@ pub enum ResourceKind {
     LevelAsset,
 }
 
+#[derive(Clone, Copy, PartialEq, Eq)]
+pub enum TerminalSeverity {
+    Info,
+    Warning,
+    Error,
+}
+
+#[derive(Clone)]
+pub struct TerminalEntry {
+    pub severity: TerminalSeverity,
+    pub category: String,
+    pub message: String,
+}
+
+#[derive(Clone)]
+pub struct TerminalState {
+    pub entries: Vec<TerminalEntry>,
+    pub command_history: Vec<String>,
+    pub show_info: bool,
+    pub show_warning: bool,
+    pub show_error: bool,
+}
+
 #[derive(Clone, Copy)]
 pub enum MenuOptionKey {
     FileAutoSaveOnBuild,
@@ -169,6 +192,7 @@ pub struct RuntimeStats {
 
 #[derive(Clone)]
 pub struct ProjectState {
+        pub log_entries: Vec<String>,
     pub project_name: String,
     pub current_map: String,
     pub mode: EditorMode,
@@ -184,6 +208,7 @@ pub struct ProjectState {
     pub scenes: Vec<SceneInfo>,
     pub levels: Vec<LevelInfo>,
     pub resources: Vec<EngineResource>,
+    pub terminal: TerminalState,
     pub active_scene: usize,
     pub active_level: usize,
     pub menu_options: MenuOptions,
@@ -192,6 +217,11 @@ pub struct ProjectState {
 
 impl Default for ProjectState {
     fn default() -> Self {
+        let log_entries = vec![
+            "[LogEditor] Lighting Build Complete".to_owned(),
+            "[LogAsset] Imported New Mesh \"SM_Chair\".".to_owned(),
+            "[LogBlueprint] Compile Successful".to_owned(),
+        ];
         Self {
             project_name: "Example Project".to_owned(),
             current_map: "ExampleMap".to_owned(),
@@ -213,11 +243,8 @@ impl Default for ProjectState {
                 ContentItem::new("BP_Door", ContentKind::Blueprint),
                 ContentItem::new("T_Concrete", ContentKind::Texture),
             ],
-            output_log: vec![
-                "[LogEditor] Lighting Build Complete".to_owned(),
-                "[LogAsset] Imported New Mesh \"SM_Chair\".".to_owned(),
-                "[LogBlueprint] Compile Successful".to_owned(),
-            ],
+            output_log: log_entries.clone(),
+            log_entries,
             settings: EditorSettings {
                 show_grid: true,
                 realtime_viewport: true,
@@ -261,10 +288,34 @@ impl Default for ProjectState {
                 EngineResource::new("T_Concrete", ResourceKind::Texture),
                 EngineResource::new("SFX_Click", ResourceKind::Audio),
             ],
+            terminal: TerminalState::default(),
             active_scene: 0,
             active_level: 0,
             menu_options: MenuOptions::default(),
             next_actor_id: 5,
+        }
+    }
+}
+
+impl Default for TerminalState {
+    fn default() -> Self {
+        Self {
+            entries: vec![
+                TerminalEntry {
+                    severity: TerminalSeverity::Info,
+                    category: "Engine".to_owned(),
+                    message: "Terminal initialized.".to_owned(),
+                },
+                TerminalEntry {
+                    severity: TerminalSeverity::Warning,
+                    category: "Build".to_owned(),
+                    message: "No build cache configured (using default).".to_owned(),
+                },
+            ],
+            command_history: Vec::new(),
+            show_info: true,
+            show_warning: true,
+            show_error: true,
         }
     }
 }
@@ -372,6 +423,30 @@ impl ProjectState {
         self.actors.push(SceneActor::new(id, base_name));
         self.dirty = true;
         id
+    }
+
+    pub fn terminal_log(
+        &mut self,
+        severity: TerminalSeverity,
+        category: impl Into<String>,
+        message: impl Into<String>,
+    ) {
+        let category = category.into();
+        let message = message.into();
+        if let Some(last) = self.terminal.entries.last() {
+            if last.severity == severity && last.category == category && last.message == message {
+                return;
+            }
+        }
+        self.terminal.entries.push(TerminalEntry {
+            severity,
+            category,
+            message,
+        });
+        if self.terminal.entries.len() > 800 {
+            let trim = self.terminal.entries.len() - 800;
+            self.terminal.entries.drain(0..trim);
+        }
     }
 
     pub fn create_scene(&mut self, name: String, dimension: SceneDimension) {

@@ -1,14 +1,14 @@
-use crate::state::ProjectState;
+use crate::app::EditorApp;
 
-pub fn draw(ui: &mut egui::Ui, project: &mut ProjectState) {
+pub fn draw(ui: &mut egui::Ui, app: &mut EditorApp) {
     ui.horizontal(|ui| {
         ui.label(egui::RichText::new("Details").strong());
     });
     ui.separator();
-    let selected = project.actors.iter().find(|a| a.selected);
-    if let Some(actor) = selected {
+    let selected_index = app.ui_state.selected_actor.unwrap_or(0);
+    let actor = app.project.actors.get(selected_index);
+    if let Some(actor) = actor {
         ui.label(egui::RichText::new(&actor.name).strong());
-        ui.label(egui::RichText::new(&actor.kind).weak());
         ui.add_space(8.0);
         egui::CollapsingHeader::new("Transform").default_open(true).show(ui, |ui| {
             ui.horizontal(|ui| {

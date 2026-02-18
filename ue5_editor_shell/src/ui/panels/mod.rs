@@ -5,6 +5,7 @@ pub mod world_outliner;
 pub mod details;
 pub mod modes;
 pub mod blueprint_mock;
+pub mod settings;
 
 use crate::app::EditorApp;
 
@@ -44,8 +45,8 @@ impl egui_tiles::Behavior<PanelId> for PanelBehavior<'_> {
             PanelId::Viewport => viewport::draw(ui, &mut self.app.project, &mut self.app.ui_state),
             PanelId::OutputLog => output_log::draw(ui, &mut self.app.project),
             PanelId::ContentBrowser => content_browser::draw(ui, &mut self.app.project),
-            PanelId::WorldOutliner => world_outliner::draw(ui, &mut self.app.project),
-            PanelId::Details => details::draw(ui, &mut self.app.project),
+            PanelId::WorldOutliner => world_outliner::draw(ui, self.app),
+            PanelId::Details => details::draw(ui, self.app),
             PanelId::Settings => crate::ui::panels::settings::draw(ui, self.app),
         }
         ui.spacing_mut().item_spacing = old;

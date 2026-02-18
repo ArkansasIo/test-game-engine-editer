@@ -32,11 +32,13 @@ impl EditorApp {
 
 impl eframe::App for EditorApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        self.emit_terminal_diagnostics();
         // Apply theme if changed
         match self.ui_state.theme_name() {
             "Dark" => crate::app::theme::apply_editor_theme(ctx),
-            "Light" => egui::Visuals::light().apply(ctx),
-            "Classic" => egui::Visuals::classic().apply(ctx),
+            "Light" => ctx.set_visuals(egui::Visuals::light()),
+            // Fallback: use light for "Classic" (egui has no classic)
+            "Classic" => ctx.set_visuals(egui::Visuals::light()),
             _ => crate::app::theme::apply_editor_theme(ctx),
         }
 
@@ -56,5 +58,38 @@ impl eframe::App for EditorApp {
         // Execute queued actions (API bridge between UI and logic)
         actions::commands::drain_and_apply(self);
         let _ = self.action_registry.action_count();
+    }
+}
+
+impl EditorApp {
+    fn emit_terminal_diagnostics(&mut self) {
+        if self.project.resources.is_empty() {
+            self.project.terminal_log(
+                crate::state::TerminalSeverity::Warning,
+                "Resources",
+                "No resources loaded in project.",
+            );
+        }
+        if self.project.levels.is_empty() {
+            self.project.terminal_log(
+                crate::state::TerminalSeverity::Error,
+                "Levels",
+                "No level exists. Create a level before running simulation.",
+            );
+        }
+        if self.project.actors.is_empty() {
+            self.project.terminal_log(
+                crate::state::TerminalSeverity::Warning,
+                "World",
+                "No actors present in current level.",
+            );
+        }
+        if self.project.is_playing && self.project.stats.fps < 30 {
+            self.project.terminal_log(
+                crate::state::TerminalSeverity::Warning,
+                "Performance",
+                format!("Low FPS detected: {}", self.project.stats.fps),
+            );
+        }
     }
 }

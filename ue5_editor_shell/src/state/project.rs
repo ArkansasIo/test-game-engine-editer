@@ -12,7 +12,7 @@ pub struct ProjectState {
     pub project_name: String, // World/scene model (minimal stub)
     pub actors: Vec<ActorEntry>, // Content browser (minimal stub)
     pub assets: Vec<String>, // Output log
-    pub log: Vec<String>,
+    pub log_entries: Vec<String>,
 }
 
 impl Default for ProjectState {
@@ -30,7 +30,7 @@ impl Default for ProjectState {
                 "SM_Table".into(),
                 "SM_Rock".into(),
             ],
-            log: vec![
+            log_entries: vec![
                 "[LogEditor] Lighting Build Complete".into(),
                 "[LogAsset] Imported New Mesh 'SM_Chair'".into(),
                 "[LogBlueprint] Compile Successful".into(),

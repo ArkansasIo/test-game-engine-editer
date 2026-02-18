@@ -1,4 +1,5 @@
 use crate::{actions::commands::EditorCommand, app::EditorApp, state::ProjectState};
+pub mod panels;
 
 pub mod blueprint;
 pub mod dock;
@@ -50,6 +51,7 @@ pub struct UiState {
     pub show_details: bool,
     pub show_content_browser: bool,
     pub show_output_log: bool,
+    pub show_terminal: bool,
     pub show_settings: bool,
     pub actor_search: String,
     pub content_filter: String,
@@ -58,6 +60,7 @@ pub struct UiState {
     pub new_scene_buffer: String,
     pub new_level_buffer: String,
     pub new_resource_buffer: String,
+    pub terminal_input: String,
     pub theme: String,
     pub selected_scene: Option<usize>,
     pub selected_level: Option<usize>,
@@ -83,6 +86,7 @@ impl Default for UiState {
             show_details: true,
             show_content_browser: true,
             show_output_log: true,
+            show_terminal: true,
             show_settings: false,
             actor_search: String::new(),
             content_filter: String::new(),
@@ -91,6 +95,7 @@ impl Default for UiState {
             new_scene_buffer: String::new(),
             new_level_buffer: String::new(),
             new_resource_buffer: String::new(),
+            terminal_input: String::new(),
             selected_scene: Some(0),
             selected_level: Some(0),
             selected_resource: Some(0),
@@ -153,6 +158,7 @@ impl UiState {
         self.show_details = true;
         self.show_content_browser = true;
         self.show_output_log = true;
+        self.show_terminal = true;
         self.show_settings = false;
     }
 
@@ -169,13 +175,16 @@ impl UiState {
 pub fn draw_docked_layout(ctx: &egui::Context, app: &mut EditorApp) {
     dock::draw(ctx, app);
     // Show settings panel as a modal window if requested
-    if app.ui_state.show_settings {
+    let show_settings = app.ui_state.show_settings;
+    if show_settings {
+        let mut open = show_settings;
         egui::Window::new("Settings")
-            .open(&mut app.ui_state.show_settings)
+            .open(&mut open)
             .resizable(true)
             .show(ctx, |ui| {
                 crate::ui::panels::settings::draw(ui, app);
             });
+        app.ui_state.show_settings = open;
     }
 }
 

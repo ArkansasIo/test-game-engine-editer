@@ -127,6 +127,7 @@ fn window_menu(ui: &mut egui::Ui, app: &mut EditorApp) {
         action(ui, app, "World Outliner", EditorCommand::TogglePanelOutliner);
         action(ui, app, "Details", EditorCommand::TogglePanelDetails);
         action(ui, app, "Output Log", EditorCommand::TogglePanelOutput);
+        action(ui, app, "Terminal", EditorCommand::TogglePanelTerminal);
         action(ui, app, "Message Log", log_command("Message Log opened."));
         ui.separator();
         action(ui, app, "Session Frontend", log_command("Session Frontend opened."));

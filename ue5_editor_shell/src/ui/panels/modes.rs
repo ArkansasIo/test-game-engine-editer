@@ -25,23 +25,24 @@ pub fn draw(ui: &mut egui::Ui, project: &mut ProjectState, ui_state: &mut UiStat
     ui.separator();
     ui.label(egui::RichText::new("Hotkeys").strong());
     ui.label(egui::RichText::new("Ctrl+P : Toggle Search (stub)").weak());
-    if ui_state.hotkeys.search_open {
+        // Removed search_open (no such field)
         ui.add_space(8.0);
         ui.group(|ui| {
             ui.label(egui::RichText::new("Command Search (stub)").strong());
             ui.add_sized([ui.available_width(), 24.0], egui::TextEdit::singleline(&mut "".to_string()).hint_text("Type a command..."));
         });
-    }
 }
 
 fn mode_button(ui: &mut egui::Ui, project: &mut ProjectState, name: &str) {
     if ui.add_sized([ui.available_width(), 28.0], egui::Button::new(name)).clicked() {
-        project.log.push(format!("[Mode] {}", name));
+           project.log(format!("[Mode] {}", name));
+            project.log(format!("[Mode] {}", name));
     }
 }
 
 fn quick(ui: &mut egui::Ui, project: &mut ProjectState, icon: &str, name: &str) {
     if ui.add_sized([72.0, 28.0], egui::Button::new(format!("{icon} {name}"))).clicked() {
-        project.log.push(format!("[Tool] {}", name));
+           project.log(format!("[Tool] {}", name));
+            project.log(format!("[Tool] {}", name));
     }
 }

@@ -53,6 +53,7 @@ pub enum EditorCommand {
     TogglePanelDetails,
     TogglePanelContent,
     TogglePanelOutput,
+    TogglePanelTerminal,
     TogglePanelSettings,
     ToggleGrid,
     ToggleSnap,
@@ -66,6 +67,8 @@ pub enum EditorCommand {
     ShowDeveloperWindow,
     ShowDocumentationWindow,
     ShowHelpInfoWindow,
+    ExecuteTerminalCommand(String),
+    ClearTerminal,
     Undo,
     Redo,
     ResetLayout,
@@ -378,6 +381,7 @@ fn apply_command(app: &mut EditorApp, command: EditorCommand) {
         EditorCommand::TogglePanelDetails => ui_state.show_details = !ui_state.show_details,
         EditorCommand::TogglePanelContent => ui_state.show_content_browser = !ui_state.show_content_browser,
         EditorCommand::TogglePanelOutput => ui_state.show_output_log = !ui_state.show_output_log,
+        EditorCommand::TogglePanelTerminal => ui_state.show_terminal = !ui_state.show_terminal,
         EditorCommand::TogglePanelSettings => ui_state.show_settings = !ui_state.show_settings,
         EditorCommand::ToggleGrid => project.settings.show_grid = !project.settings.show_grid,
         EditorCommand::ToggleSnap => project.settings.snap_enabled = !project.settings.snap_enabled,
@@ -407,6 +411,140 @@ fn apply_command(app: &mut EditorApp, command: EditorCommand) {
         EditorCommand::ShowHelpInfoWindow => {
             ui_state.show_help_info_window = true;
             project.log("[LogHelp] Opened Help Info window.");
+        }
+        EditorCommand::ExecuteTerminalCommand(cmd) => {
+            let input = cmd.trim().to_owned();
+            if input.is_empty() {
+                return;
+            }
+            project.terminal.command_history.push(input.clone());
+            project.terminal_log(
+                state::TerminalSeverity::Info,
+                "Terminal",
+                format!("> {}", input),
+            );
+            match input.as_str() {
+                "help" => {
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Terminal",
+                        "Commands: help, clear, errors, warnings, play, stop, build, stats, list scenes, list levels, list resources",
+                    );
+                }
+                "clear" => {
+                    project.terminal.entries.clear();
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Terminal",
+                        "Terminal output cleared.",
+                    );
+                }
+                "errors" => {
+                    let count = project
+                        .terminal
+                        .entries
+                        .iter()
+                        .filter(|e| e.severity == state::TerminalSeverity::Error)
+                        .count();
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Diagnostics",
+                        format!("Error count: {}", count),
+                    );
+                }
+                "warnings" => {
+                    let count = project
+                        .terminal
+                        .entries
+                        .iter()
+                        .filter(|e| e.severity == state::TerminalSeverity::Warning)
+                        .count();
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Diagnostics",
+                        format!("Warning count: {}", count),
+                    );
+                }
+                "play" => {
+                    project.is_playing = true;
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Runtime",
+                        "Play In Editor started.",
+                    );
+                }
+                "stop" => {
+                    project.is_playing = false;
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Runtime",
+                        "Play In Editor stopped.",
+                    );
+                }
+                "build" => {
+                    app.app_core.enqueue_build(EBuildTask::All);
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Build",
+                        "Build all triggered from terminal.",
+                    );
+                }
+                "stats" => {
+                    project.terminal_log(
+                        state::TerminalSeverity::Info,
+                        "Stats",
+                        format!(
+                            "FPS={}, Shaders={}, Actors={}, Resources={}",
+                            project.stats.fps,
+                            project.stats.shader_jobs,
+                            project.actors.len(),
+                            project.resources.len()
+                        ),
+                    );
+                }
+                "list scenes" => {
+                    let msg = project
+                        .scenes
+                        .iter()
+                        .map(|s| format!("{}({})", s.name, s.dimension.label()))
+                        .collect::<Vec<_>>()
+                        .join(", ");
+                    project.terminal_log(state::TerminalSeverity::Info, "Scenes", msg);
+                }
+                "list levels" => {
+                    let msg = project
+                        .levels
+                        .iter()
+                        .map(|l| format!("{}[{}]", l.name, l.scene_name))
+                        .collect::<Vec<_>>()
+                        .join(", ");
+                    project.terminal_log(state::TerminalSeverity::Info, "Levels", msg);
+                }
+                "list resources" => {
+                    let msg = project
+                        .resources
+                        .iter()
+                        .map(|r| format!("{}:{}", r.name, r.kind.label()))
+                        .collect::<Vec<_>>()
+                        .join(", ");
+                    project.terminal_log(state::TerminalSeverity::Info, "Resources", msg);
+                }
+                _ => {
+                    project.terminal_log(
+                        state::TerminalSeverity::Error,
+                        "Terminal",
+                        format!("Unknown command: {}", input),
+                    );
+                }
+            }
+        }
+        EditorCommand::ClearTerminal => {
+            project.terminal.entries.clear();
+            project.terminal_log(
+                state::TerminalSeverity::Info,
+                "Terminal",
+                "Terminal output cleared.",
+            );
         }
         EditorCommand::Undo => {
             if let Some(previous) = ui_state.undo_stack.pop() {

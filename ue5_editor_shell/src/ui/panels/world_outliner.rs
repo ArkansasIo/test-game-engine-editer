@@ -1,6 +1,6 @@
-use crate::state::ProjectState;
+use crate::app::EditorApp;
 
-pub fn draw(ui: &mut egui::Ui, project: &mut ProjectState) {
+pub fn draw(ui: &mut egui::Ui, app: &mut EditorApp) {
     ui.horizontal(|ui| {
         ui.label(egui::RichText::new("World Outliner").strong());
         ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
@@ -9,16 +9,14 @@ pub fn draw(ui: &mut egui::Ui, project: &mut ProjectState) {
     });
     ui.separator();
     egui::ScrollArea::vertical().show(ui, |ui| {
-        for actor in &mut project.actors {
-            let selected = actor.selected;
-            let label = format!("{} ({})", actor.name, actor.kind);
+        for (i, actor) in app.project.actors.iter_mut().enumerate() {
+            let selected = app.ui_state.selected_actor == Some(i);
+            let label = format!("{}", actor.name);
             let resp = ui.selectable_label(selected, label);
             if resp.clicked() {
-                for a in &mut project.actors {
-                    a.selected = false;
-                }
-                actor.selected = true;
-                project.log.push(format!("[Selection] Actor selected: {}", actor.name));
+                app.ui_state.selected_actor = Some(i);
+                // Add log entry to project log (field, not method)
+                app.project.log_entries.push(format!("[Selection] Actor selected: {}", actor.name));
             }
         }
     });

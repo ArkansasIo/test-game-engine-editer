@@ -13,14 +13,14 @@ pub fn draw(ui: &mut egui::Ui, project: &mut ProjectState) {
     // Asset tiles (mock)
     egui::ScrollArea::horizontal().show(ui, |ui| {
         ui.horizontal(|ui| {
-            for a in &project.assets {
+            for item in &project.content_items {
                 ui.group(|ui| {
                     ui.set_min_size(egui::vec2(140.0, 96.0));
                     ui.vertical_centered(|ui| {
                         ui.add_space(10.0);
                         ui.label("🧊");
                         ui.add_space(10.0);
-                        ui.label(egui::RichText::new(a).strong());
+                        ui.label(egui::RichText::new(&item.name).strong());
                     });
                 });
                 ui.add_space(8.0);

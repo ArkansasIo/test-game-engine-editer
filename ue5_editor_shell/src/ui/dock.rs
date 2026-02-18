@@ -1,7 +1,7 @@
 use crate::{
     actions::commands::EditorCommand,
     app::EditorApp,
-    state::{EditorMode, MenuOptionKey, ResourceKind, SceneDimension},
+    state::{EditorMode, MenuOptionKey, ResourceKind, SceneDimension, TerminalSeverity},
 };
 
 pub fn draw(ctx: &egui::Context, app: &mut EditorApp) {
@@ -26,12 +26,12 @@ pub fn draw(ctx: &egui::Context, app: &mut EditorApp) {
             });
     }
 
-    if app.ui_state.show_content_browser || app.ui_state.show_output_log {
+    if app.ui_state.show_content_browser || app.ui_state.show_output_log || app.ui_state.show_terminal {
         egui::TopBottomPanel::bottom("bottom_panel")
             .resizable(true)
             .default_height(240.0)
             .show(ctx, |ui| {
-                ui.columns(2, |columns| {
+                ui.columns(3, |columns| {
                     if app.ui_state.show_content_browser {
                         draw_content_browser(&mut columns[0], app);
                     } else {
@@ -45,6 +45,14 @@ pub fn draw(ctx: &egui::Context, app: &mut EditorApp) {
                     } else {
                         columns[1].centered_and_justified(|ui| {
                             ui.label("Output Log hidden");
+                        });
+                    }
+
+                    if app.ui_state.show_terminal {
+                        draw_terminal(&mut columns[2], app);
+                    } else {
+                        columns[2].centered_and_justified(|ui| {
+                            ui.label("Terminal hidden");
                         });
                     }
                 });
@@ -485,6 +493,55 @@ fn draw_output_log(ui: &mut egui::Ui, app: &mut EditorApp) {
     egui::ScrollArea::vertical().show(ui, |ui| {
         for line in app.project.output_log.iter().rev() {
             ui.label(line);
+        }
+    });
+}
+
+fn draw_terminal(ui: &mut egui::Ui, app: &mut EditorApp) {
+    ui.heading("Engine Terminal");
+    ui.horizontal(|ui| {
+        if ui.button("Clear").clicked() {
+            app.ui_state.enqueue(EditorCommand::ClearTerminal);
+        }
+        ui.checkbox(&mut app.project.terminal.show_info, "Info");
+        ui.checkbox(&mut app.project.terminal.show_warning, "Warn");
+        ui.checkbox(&mut app.project.terminal.show_error, "Error");
+    });
+
+    ui.horizontal(|ui| {
+        let enter_pressed = ui.input(|i| i.key_pressed(egui::Key::Enter));
+        let submitted = ui
+            .text_edit_singleline(&mut app.ui_state.terminal_input)
+            .lost_focus()
+            && enter_pressed;
+        let run_clicked = ui.button("Run").clicked();
+        if (submitted || run_clicked) && !app.ui_state.terminal_input.trim().is_empty() {
+            app.ui_state.enqueue(EditorCommand::ExecuteTerminalCommand(
+                app.ui_state.terminal_input.clone(),
+            ));
+            app.ui_state.terminal_input.clear();
+        }
+    });
+
+    egui::ScrollArea::vertical().show(ui, |ui| {
+        for entry in app.project.terminal.entries.iter().rev() {
+            let visible = match entry.severity {
+                TerminalSeverity::Info => app.project.terminal.show_info,
+                TerminalSeverity::Warning => app.project.terminal.show_warning,
+                TerminalSeverity::Error => app.project.terminal.show_error,
+            };
+            if !visible {
+                continue;
+            }
+            let color = match entry.severity {
+                TerminalSeverity::Info => egui::Color32::from_rgb(170, 200, 255),
+                TerminalSeverity::Warning => egui::Color32::from_rgb(255, 210, 120),
+                TerminalSeverity::Error => egui::Color32::from_rgb(255, 120, 120),
+            };
+            ui.colored_label(
+                color,
+                format!("[{}] {}", entry.category, entry.message),
+            );
         }
     });
 }
