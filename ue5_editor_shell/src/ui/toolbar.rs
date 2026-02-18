@@ -1,4 +1,9 @@
-use crate::{actions::commands::EditorCommand, app::EditorApp, state::EditorMode};
+use crate::{
+    actions::commands::EditorCommand,
+    app::EditorApp,
+    editor_api::types::ELayoutPreset,
+    state::EditorMode,
+};
 
 pub fn draw_toolbar(ctx: &egui::Context, app: &mut EditorApp) {
     egui::TopBottomPanel::top("toolbar")
@@ -65,6 +70,19 @@ pub fn draw_toolbar(ctx: &egui::Context, app: &mut EditorApp) {
                     .clicked()
                 {
                     app.ui_state.enqueue(EditorCommand::TogglePanelSettings);
+                }
+                ui.separator();
+                if ui.button("Layout:Default").clicked() {
+                    app.ui_state
+                        .enqueue(EditorCommand::SetLayoutPreset(ELayoutPreset::Default));
+                }
+                if ui.button("Layout:Debug").clicked() {
+                    app.ui_state
+                        .enqueue(EditorCommand::SetLayoutPreset(ELayoutPreset::Debug));
+                }
+                if ui.button("SC:Connect").clicked() {
+                    app.ui_state
+                        .enqueue(EditorCommand::ConnectSourceControl("Git".to_owned()));
                 }
             });
         });

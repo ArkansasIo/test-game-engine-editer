@@ -1,10 +1,17 @@
-use crate::{state, ui};
+use crate::{
+    app::EditorApp,
+    editor_api::types::{EBuildTask, ELayoutPreset, EViewportViewMode},
+    state,
+};
 
 #[derive(Clone)]
 pub enum EditorCommand {
     NewProject,
     SaveProject,
     BuildLighting,
+    BuildGeometry,
+    BuildNavigation,
+    BuildAll,
     CompileBlueprints,
     PlayInEditor,
     StopPlay,
@@ -22,6 +29,10 @@ pub enum EditorCommand {
     RemoveContent,
     SetContentFilter(String),
     SetMode(state::EditorMode),
+    SetLayoutPreset(ELayoutPreset),
+    SetViewportMode(EViewportViewMode),
+    ConnectSourceControl(String),
+    DisconnectSourceControl,
     TogglePanelBlueprint,
     TogglePanelOutliner,
     TogglePanelDetails,
@@ -40,19 +51,18 @@ pub enum EditorCommand {
     AddLog(String),
 }
 
-pub fn drain_and_apply(
-    project: &mut state::ProjectState,
-    ui_state: &mut ui::UiState,
-    _registry: &crate::actions::registry::ActionRegistry,
-) {
-    let queue = std::mem::take(&mut ui_state.pending_commands);
+pub fn drain_and_apply(app: &mut EditorApp) {
+    let queue = std::mem::take(&mut app.ui_state.pending_commands);
     for cmd in queue {
-        apply_command(project, ui_state, cmd);
+        apply_command(app, cmd);
     }
-    ui_state.sanitize_selection(project);
+    app.ui_state.sanitize_selection(&app.project);
 }
 
-fn apply_command(project: &mut state::ProjectState, ui_state: &mut ui::UiState, command: EditorCommand) {
+fn apply_command(app: &mut EditorApp, command: EditorCommand) {
+    let project = &mut app.project;
+    let ui_state = &mut app.ui_state;
+
     match command {
         EditorCommand::NewProject => {
             ui_state.push_undo_snapshot(project);
@@ -67,8 +77,21 @@ fn apply_command(project: &mut state::ProjectState, ui_state: &mut ui::UiState, 
             ui_state.status_text = "Saved".to_owned();
         }
         EditorCommand::BuildLighting => {
+            app.app_core.enqueue_build(EBuildTask::Lighting);
             project.stats.shader_jobs = 0;
-            project.log("[LogEditor] Lighting build complete.");
+            project.log("[LogBuild] Lighting build complete.");
+        }
+        EditorCommand::BuildGeometry => {
+            app.app_core.enqueue_build(EBuildTask::Geometry);
+            project.log("[LogBuild] Geometry build complete.");
+        }
+        EditorCommand::BuildNavigation => {
+            app.app_core.enqueue_build(EBuildTask::Navigation);
+            project.log("[LogBuild] Navigation build complete.");
+        }
+        EditorCommand::BuildAll => {
+            app.app_core.enqueue_build(EBuildTask::All);
+            project.log("[LogBuild] Build all complete.");
         }
         EditorCommand::CompileBlueprints => {
             project.log("[LogBlueprint] Compile successful.");
@@ -193,6 +216,28 @@ fn apply_command(project: &mut state::ProjectState, ui_state: &mut ui::UiState, 
             project.mode = mode;
             project.log("[LogEditor] Mode switched.");
         }
+        EditorCommand::SetLayoutPreset(preset) => {
+            app.app_core.apply_layout_preset(preset);
+            ui_state.status_text = format!("Layout preset: {:?}", preset);
+        }
+        EditorCommand::SetViewportMode(mode) => {
+            app.app_core.set_view_mode(mode);
+            project.view_mode = match mode {
+                EViewportViewMode::Lit => state::ViewMode::Lit,
+                EViewportViewMode::Unlit => state::ViewMode::Unlit,
+                EViewportViewMode::Wireframe => state::ViewMode::Wireframe,
+                EViewportViewMode::DetailLighting => state::ViewMode::Lit,
+                EViewportViewMode::BufferVisualization => state::ViewMode::Lit,
+            };
+        }
+        EditorCommand::ConnectSourceControl(provider) => {
+            app.app_core.connect_source_control(&provider);
+            project.log(format!("[LogSourceControl] Connected to {}.", provider));
+        }
+        EditorCommand::DisconnectSourceControl => {
+            app.app_core.disconnect_source_control();
+            project.log("[LogSourceControl] Disconnected.");
+        }
         EditorCommand::TogglePanelBlueprint => ui_state.show_blueprint = !ui_state.show_blueprint,
         EditorCommand::TogglePanelOutliner => ui_state.show_outliner = !ui_state.show_outliner,
         EditorCommand::TogglePanelDetails => ui_state.show_details = !ui_state.show_details,
@@ -221,6 +266,7 @@ fn apply_command(project: &mut state::ProjectState, ui_state: &mut ui::UiState, 
         }
         EditorCommand::ResetLayout => {
             ui_state.reset_layout();
+            app.app_core.apply_layout_preset(ELayoutPreset::Default);
             ui_state.status_text = "Layout reset".to_owned();
         }
         EditorCommand::AddLog(line) => {

@@ -2,6 +2,7 @@ use crate::{actions::commands::EditorCommand, app::EditorApp, state::ProjectStat
 
 pub mod blueprint;
 pub mod dock;
+pub mod status_bar;
 pub mod topbar;
 pub mod toolbar;
 

@@ -7,6 +7,13 @@ pub enum EditorMode {
 }
 
 #[derive(Clone, Copy, PartialEq, Eq)]
+pub enum ViewMode {
+    Lit,
+    Unlit,
+    Wireframe,
+}
+
+#[derive(Clone, Copy, PartialEq, Eq)]
 pub enum ContentKind {
     StaticMesh,
     Material,
@@ -71,6 +78,7 @@ pub struct ProjectState {
     pub output_log: Vec<String>,
     pub settings: EditorSettings,
     pub stats: RuntimeStats,
+    pub view_mode: ViewMode,
     next_actor_id: u32,
 }
 
@@ -114,6 +122,7 @@ impl Default for ProjectState {
                 shader_jobs: 23,
                 fps: 120,
             },
+            view_mode: ViewMode::Lit,
             next_actor_id: 5,
         }
     }

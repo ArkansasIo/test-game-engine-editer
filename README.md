@@ -38,3 +38,11 @@ cargo run -p neoforge_editor
 - Settings/options: grid, snap, snap value, autosave, realtime viewport, panel visibility toggles.
 - UI systems: menubar commands, toolbar actions, mode switching, searchable outliner, editable details, filtered content browser, output log actions, blueprint window actions.
 - Hotkeys: `Ctrl+S`, `Ctrl+Z`, `Ctrl+Y`, `Ctrl+B`, `F5`, `Delete`.
+- App architecture modules: `editor_api/{types,services,app_core,module_graph}.rs`.
+- Services scaffolded: `IEditorApp`, `ILayoutService`, `IBuildService`, `ISourceControlService`, `IViewportService`.
+- Layout presets: `Default`, `Animation`, `Modeling`, `Debug`.
+- View modes: `Lit`, `Unlit`, `Wireframe` (menu + toolbar wired).
+- Build routing: lighting, geometry/paths, navigation, build all.
+- Source control routing: connect/disconnect + status bar state.
+- Status bar: source control, shader jobs, FPS, layout preset, viewport mode, build state, status text.
+- Menu coverage: File, Edit, Window, Tools, Build, Select, Actor, Components, Level, Blueprints, Materials/FX, Cinematics, Play, Help.

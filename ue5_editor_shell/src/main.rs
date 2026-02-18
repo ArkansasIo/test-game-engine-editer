@@ -1,5 +1,6 @@
 mod app;
 mod actions;
+mod editor_api;
 mod state;
 mod ui;
 use app::EditorApp;

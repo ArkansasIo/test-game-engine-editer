@@ -223,6 +223,18 @@ fn draw_settings(ui: &mut egui::Ui, app: &mut EditorApp) {
             app.ui_state.enqueue(EditorCommand::SetRealtimeViewport(v));
         }
     });
+    ui.separator();
+    ui.label(egui::RichText::new("Loaded Modules").strong());
+    egui::ScrollArea::vertical()
+        .max_height(120.0)
+        .show(ui, |ui| {
+            for module in &app.modules {
+                ui.label(format!(
+                    "{} [cmd:{} tabs:{} svc:{}]",
+                    module.name, module.provides_commands, module.provides_tabs, module.provides_services
+                ));
+            }
+        });
 }
 
 fn draw_content_browser(ui: &mut egui::Ui, app: &mut EditorApp) {
@@ -310,6 +322,12 @@ fn draw_viewport(ctx: &egui::Context, app: &mut EditorApp) {
             });
             ui.separator();
             ui.label(format!("FPS: {}", app.project.stats.fps));
+            ui.separator();
+            ui.label(match app.project.view_mode {
+                crate::state::ViewMode::Lit => "Lit",
+                crate::state::ViewMode::Unlit => "Unlit",
+                crate::state::ViewMode::Wireframe => "Wireframe",
+            });
         });
         ui.separator();
 
