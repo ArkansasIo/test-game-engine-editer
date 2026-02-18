@@ -1,0 +1,11 @@
+﻿[workspace]
+resolver = "2"
+members = [
+  "crates/neoforge_core",
+  "crates/neoforge_graph",
+  "crates/neoforge_runtime",
+  "crates/neoforge_plugins",
+  "crates/towngen_adapter",
+  "apps/neoforge_editor",
+  "engine_core"
+]

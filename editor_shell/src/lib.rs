@@ -1,0 +1,15 @@
+pub mod app_core;
+pub mod docking;
+pub mod command_system;
+pub mod content_browser;
+pub mod outliner;
+pub mod details;
+pub mod viewport;
+pub mod undo;
+pub mod asset_registry;
+pub mod selection;
+pub mod panels;
+pub mod tabs;
+pub mod menus;
+pub mod services;
+pub mod types;

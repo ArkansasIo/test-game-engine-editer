@@ -1,0 +1,8 @@
+﻿pub fn register_tool(name: &str) {
+    // Register a new tool
+}
+
+pub fn get_tools() -> Vec<&'static str> {
+    // Return a list of registered tools
+    vec![]
+}

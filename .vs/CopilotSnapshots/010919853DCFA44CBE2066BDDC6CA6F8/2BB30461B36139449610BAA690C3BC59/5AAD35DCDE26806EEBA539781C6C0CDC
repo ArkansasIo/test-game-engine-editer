@@ -1,0 +1,4 @@
+﻿// Blueprint runtime system stub
+pub fn execute_blueprint(name: &str) {
+    // Execute a blueprint by name
+}

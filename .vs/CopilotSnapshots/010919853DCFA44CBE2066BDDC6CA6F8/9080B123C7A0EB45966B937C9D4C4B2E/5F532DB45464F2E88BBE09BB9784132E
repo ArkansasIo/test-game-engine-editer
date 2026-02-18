@@ -1,0 +1,7 @@
+﻿pub fn add_logic_statement(statement: &str) {
+    // Add a logic statement to the system
+}
+
+pub fn run_logic() {
+    // Run all logic statements
+}

@@ -1,0 +1,4 @@
+﻿// Editor menus stub
+pub fn add_menu(name: &str) {
+    // Add a menu to the editor
+}

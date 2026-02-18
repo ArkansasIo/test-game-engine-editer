@@ -1,0 +1,3 @@
+﻿pub fn open_tool(tool_name: &str) {
+    // Open a tool by name
+}

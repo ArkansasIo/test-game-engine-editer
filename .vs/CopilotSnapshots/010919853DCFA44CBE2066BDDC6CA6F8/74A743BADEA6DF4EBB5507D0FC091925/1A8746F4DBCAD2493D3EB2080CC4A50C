@@ -1,0 +1,4 @@
+﻿// 2D/3D Math library for game engine
+// Use math types from crate root, not as submodules
+// (Vec2, Vec3, Vec4, Mat2, Mat3, Mat4, Quat, Transform, functions, etc.)
+// This file is now a placeholder; use types directly from crate root.

@@ -1,0 +1,14 @@
+﻿pub fn open_tool(tool_name: &str) {
+    // Open a tool by name
+    println!("Opening tool: {}", tool_name);
+}
+
+pub fn close_tool(tool_name: &str) {
+    // Close a tool by name
+    println!("Closing tool: {}", tool_name);
+}
+
+pub fn list_tools() {
+    // List all available tools
+    println!("Listing all tools.");
+}

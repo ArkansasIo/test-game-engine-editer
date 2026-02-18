@@ -1,0 +1,3 @@
+﻿pub fn update_game_logic() {
+    // Update game logic (player, enemies, etc.)
+}

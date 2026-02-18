@@ -1,0 +1,4 @@
+﻿// Editor tools stub
+pub fn add_tool(name: &str) {
+    // Add a tool to the editor
+}

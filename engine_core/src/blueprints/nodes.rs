@@ -1,0 +1,4 @@
+// Blueprint node system stub
+pub fn register_node_type(_name: &str) {
+    // Register a new node type
+}

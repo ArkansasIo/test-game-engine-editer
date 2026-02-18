@@ -1,0 +1,7 @@
+﻿pub fn initialize() {
+    // Initialize audio system
+}
+
+pub fn play_sound(sound_id: u32) {
+    // Play a sound by ID
+}

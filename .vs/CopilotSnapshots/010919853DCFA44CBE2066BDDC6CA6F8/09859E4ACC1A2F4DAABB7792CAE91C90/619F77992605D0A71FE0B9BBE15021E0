@@ -1,0 +1,7 @@
+﻿pub fn initialize() {
+    // Initialize rendering system
+}
+
+pub fn render_frame() {
+    // Render a frame
+}

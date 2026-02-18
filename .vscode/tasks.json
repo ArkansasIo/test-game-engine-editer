@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Rust workspace",
+			"type": "shell",
+			"command": "cargo build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Build Rust workspace after fixes",
+			"type": "shell",
+			"command": "cargo build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build"
+		}
+	]
+}

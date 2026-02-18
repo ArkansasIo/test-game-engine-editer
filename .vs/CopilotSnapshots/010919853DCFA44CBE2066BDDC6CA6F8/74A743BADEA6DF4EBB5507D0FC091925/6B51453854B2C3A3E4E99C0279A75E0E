@@ -1,0 +1,17 @@
+﻿// Asset management system for 2D/3D assets
+
+pub mod texture;
+pub mod model;
+pub mod material;
+
+/// Load an asset by path
+pub fn load_asset(path: &str) {
+    // TODO: Implement asset loading
+    println!("Loading asset: {}", path);
+}
+
+/// Unload an asset by path
+pub fn unload_asset(path: &str) {
+    // TODO: Implement asset unloading
+    println!("Unloading asset: {}", path);
+}

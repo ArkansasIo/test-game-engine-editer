@@ -1,0 +1,4 @@
+// Blueprint graph system stub
+pub fn create_graph(_name: &str) {
+    // Create a new node graph
+}

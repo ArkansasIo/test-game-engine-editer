@@ -1,0 +1,26 @@
+use once_cell::sync::Lazy;
+use std::sync::Mutex;
+
+static TOOL_REGISTRY: Lazy<Mutex<Vec<String>>> = Lazy::new(|| Mutex::new(Vec::new()));
+
+pub fn register_tool(name: &str) {
+    let mut registry = TOOL_REGISTRY.lock().unwrap();
+    if !registry.contains(&name.to_string()) {
+        registry.push(name.to_string());
+    }
+}
+
+pub fn get_tools() -> Vec<String> {
+    let registry = TOOL_REGISTRY.lock().unwrap();
+    registry.clone()
+}
+
+pub fn remove_tool(name: &str) {
+    let mut registry = TOOL_REGISTRY.lock().unwrap();
+    registry.retain(|tool| tool != name);
+}
+
+pub fn is_tool_registered(name: &str) -> bool {
+    let registry = TOOL_REGISTRY.lock().unwrap();
+    registry.contains(&name.to_string())
+}

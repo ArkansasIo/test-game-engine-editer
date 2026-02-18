@@ -1,0 +1,7 @@
+﻿pub fn initialize() {
+    // Initialize input system
+}
+
+pub fn poll_events() {
+    // Poll input events
+}

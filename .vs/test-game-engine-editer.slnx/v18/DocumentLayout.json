@@ -1,0 +1,1225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\auto_ue5_editor.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:auto_ue5_editor.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\asset.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\asset.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\types.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\types.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\panels.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\panels.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\lib.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\lib.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\outliner.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\outliner.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\audio.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\audio.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\examples\\tool_registry_demo.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\examples\\tool_registry_demo.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\tool_registry.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\tool_registry.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\Cargo.toml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\Cargo.toml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\lib.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\lib.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\menus.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\menus.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\input.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\input.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ecs.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\ecs.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\scene.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\scene.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ui.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\ui.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\scripting.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\scripting.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\game_logic.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\game_logic.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\rendering.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\rendering.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\tools.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\tools.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\physics.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\physics.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\Cargo.toml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cargo.toml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\main_menu.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\main_menu.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\statement_system.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\statement_system.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\modular_menu.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\modular_menu.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\feature_registry.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\feature_registry.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\logic_system.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\logic_system.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\submenu.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\submenu.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\graph.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\blueprints\\graph.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor\\tools.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\editor\\tools.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\nodes.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\blueprints\\nodes.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\runtime.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\blueprints\\runtime.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor\\menus.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\editor\\menus.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\blueprints.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\plugins.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\plugins.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\editor.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\runtime.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\runtime.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\modules.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\modules.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec2.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\vec2.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec3.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\vec3.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec4.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\vec4.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\math.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\math.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\functions.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\functions.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat2.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\mat2.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat3.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\mat3.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\transform.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\transform.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\quat.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\quat.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat4.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\mat4.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\material.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\material.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\model.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\model.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\texture.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\texture.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\rect.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\rect.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ray.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\ray.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\aabb.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\aabb.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\color.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\color.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\plane.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\plane.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\animation.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\animation.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\shader.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\shader.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\skeleton.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\skeleton.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\sound.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\sound.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\font.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\src\\font.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\examples\\full_system_demo.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:engine_core\\examples\\full_system_demo.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\Cargo.toml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\Cargo.toml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\app_core.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\app_core.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\docking.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\docking.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\command_system.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\command_system.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\content_browser.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\content_browser.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\details.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\details.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\viewport.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\viewport.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\undo.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\undo.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\asset_registry.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\asset_registry.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\selection.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\selection.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\tabs.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\tabs.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\menus.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\menus.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\services.rs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:editor_shell\\src\\services.rs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "auto_ue5_editor.bat",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\auto_ue5_editor.bat",
+              "RelativeDocumentMoniker": "auto_ue5_editor.bat",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\auto_ue5_editor.bat",
+              "RelativeToolTip": "auto_ue5_editor.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE6SURBVDhPY6AI/P//H8oiHzBWlpfeBxqlAOWTCBgfMJGi2ds3AIUG660sL/n/69cvDLznyJn/uw6dwioHwyC9QBeggqu3HzDsOHiS4d37Dwxv371nWL/9AMO5yzegspgAwwAWJiaGb9\u002B\u002BM5joaTKYGmgxfPv\u002BjYGFBUMZHGDI/Pn7l\u002BH3718Mf//9ZfgHZP/5/Zvhz5\u002B/UFlMgGHAz58/GRiB9IGjpxj2HTnBwAjknDp7HuiSHxAFaADDACNdDYYwPzcGPh4uhr9Am5\u002B9eMrw6Mljho6\u002BiQw3bt6GqkIAnJ4L9HJh8HS2Yfj44SNDW005w4d37xg4ONigsgiAO3SA4OtXYAACVeQWlTKwsjJjTbl4DVBXVWaoKMpnsLG0YOjtaGNQVMBMc8CkXAxMyoxkJuX/D6CMAQMMDABIjqFEM6osUwAAAABJRU5ErkJggg==",
+              "WhenOpened": "2026-02-18T04:43:18.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "asset.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\asset.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\asset.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\asset.rs",
+              "RelativeToolTip": "engine_core\\src\\asset.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:08:53.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "types.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\types.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\types.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\types.rs",
+              "RelativeToolTip": "editor_shell\\src\\types.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:54.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "panels.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\panels.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\panels.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\panels.rs",
+              "RelativeToolTip": "editor_shell\\src\\panels.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:44.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "lib.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\lib.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\lib.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\lib.rs",
+              "RelativeToolTip": "editor_shell\\src\\lib.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:11.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "outliner.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\outliner.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\outliner.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\outliner.rs",
+              "RelativeToolTip": "editor_shell\\src\\outliner.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:22.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "Cargo.toml",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\Cargo.toml",
+              "RelativeDocumentMoniker": "editor_shell\\Cargo.toml",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\Cargo.toml",
+              "RelativeToolTip": "editor_shell\\Cargo.toml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:09.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "full_system_demo.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\examples\\full_system_demo.rs",
+              "RelativeDocumentMoniker": "engine_core\\examples\\full_system_demo.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\examples\\full_system_demo.rs",
+              "RelativeToolTip": "engine_core\\examples\\full_system_demo.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:12:29.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "font.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\font.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\font.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\font.rs",
+              "RelativeToolTip": "engine_core\\src\\font.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:27.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "sound.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\sound.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\sound.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\sound.rs",
+              "RelativeToolTip": "engine_core\\src\\sound.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:26.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "skeleton.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\skeleton.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\skeleton.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\skeleton.rs",
+              "RelativeToolTip": "engine_core\\src\\skeleton.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:26.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "shader.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\shader.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\shader.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\shader.rs",
+              "RelativeToolTip": "engine_core\\src\\shader.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:26.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "animation.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\animation.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\animation.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\animation.rs",
+              "RelativeToolTip": "engine_core\\src\\animation.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:26.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "plane.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\plane.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\plane.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\plane.rs",
+              "RelativeToolTip": "engine_core\\src\\plane.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:19.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "color.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\color.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\color.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\color.rs",
+              "RelativeToolTip": "engine_core\\src\\color.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:18.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "services.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\services.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\services.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\services.rs",
+              "RelativeToolTip": "editor_shell\\src\\services.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:50.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "aabb.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\aabb.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\aabb.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\aabb.rs",
+              "RelativeToolTip": "engine_core\\src\\aabb.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:18.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "menus.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\menus.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\menus.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\menus.rs",
+              "RelativeToolTip": "editor_shell\\src\\menus.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:48.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "tabs.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\tabs.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\tabs.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\tabs.rs",
+              "RelativeToolTip": "editor_shell\\src\\tabs.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:46.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "selection.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\selection.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\selection.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\selection.rs",
+              "RelativeToolTip": "editor_shell\\src\\selection.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:42.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "asset_registry.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\asset_registry.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\asset_registry.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\asset_registry.rs",
+              "RelativeToolTip": "editor_shell\\src\\asset_registry.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:31.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ray.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ray.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\ray.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ray.rs",
+              "RelativeToolTip": "engine_core\\src\\ray.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:18.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "undo.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\undo.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\undo.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\undo.rs",
+              "RelativeToolTip": "editor_shell\\src\\undo.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:29.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "viewport.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\viewport.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\viewport.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\viewport.rs",
+              "RelativeToolTip": "editor_shell\\src\\viewport.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:28.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "details.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\details.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\details.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\details.rs",
+              "RelativeToolTip": "editor_shell\\src\\details.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:23.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "content_browser.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\content_browser.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\content_browser.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\content_browser.rs",
+              "RelativeToolTip": "editor_shell\\src\\content_browser.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:20.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "command_system.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\command_system.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\command_system.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\command_system.rs",
+              "RelativeToolTip": "editor_shell\\src\\command_system.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:18.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "rect.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\rect.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\rect.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\rect.rs",
+              "RelativeToolTip": "engine_core\\src\\rect.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:11:18.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "docking.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\docking.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\docking.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\docking.rs",
+              "RelativeToolTip": "editor_shell\\src\\docking.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:15.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "app_core.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\app_core.rs",
+              "RelativeDocumentMoniker": "editor_shell\\src\\app_core.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\editor_shell\\src\\app_core.rs",
+              "RelativeToolTip": "editor_shell\\src\\app_core.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:14:13.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "vec3.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec3.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\vec3.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec3.rs",
+              "RelativeToolTip": "engine_core\\src\\vec3.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:08:53.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "vec4.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec4.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\vec4.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec4.rs",
+              "RelativeToolTip": "engine_core\\src\\vec4.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:08:53.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "math.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\math.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\math.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\math.rs",
+              "RelativeToolTip": "engine_core\\src\\math.rs",
+              "ViewState": "AgIAAAEAAAAAAAAAAABRwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:08:53.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "vec2.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec2.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\vec2.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\vec2.rs",
+              "RelativeToolTip": "engine_core\\src\\vec2.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:08:53.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "functions.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\functions.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\functions.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\functions.rs",
+              "RelativeToolTip": "engine_core\\src\\functions.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:03.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "mat2.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat2.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\mat2.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat2.rs",
+              "RelativeToolTip": "engine_core\\src\\mat2.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:03.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "mat3.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat3.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\mat3.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat3.rs",
+              "RelativeToolTip": "engine_core\\src\\mat3.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:03.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "transform.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\transform.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\transform.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\transform.rs",
+              "RelativeToolTip": "engine_core\\src\\transform.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:03.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "quat.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\quat.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\quat.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\quat.rs",
+              "RelativeToolTip": "engine_core\\src\\quat.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:03.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "mat4.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat4.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\mat4.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\mat4.rs",
+              "RelativeToolTip": "engine_core\\src\\mat4.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:03.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "material.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\material.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\material.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\material.rs",
+              "RelativeToolTip": "engine_core\\src\\material.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:08.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "tool_registry_demo.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\examples\\tool_registry_demo.rs",
+              "RelativeDocumentMoniker": "engine_core\\examples\\tool_registry_demo.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\examples\\tool_registry_demo.rs",
+              "RelativeToolTip": "engine_core\\examples\\tool_registry_demo.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:04:06.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "audio.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\audio.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\audio.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\audio.rs",
+              "RelativeToolTip": "engine_core\\src\\audio.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "texture.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\texture.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\texture.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\texture.rs",
+              "RelativeToolTip": "engine_core\\src\\texture.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:08.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "model.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\model.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\model.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\model.rs",
+              "RelativeToolTip": "engine_core\\src\\model.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:09:08.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "tool_registry.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\tool_registry.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\tool_registry.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\tool_registry.rs",
+              "RelativeToolTip": "engine_core\\src\\tool_registry.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:00:34.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "graph.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\graph.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\blueprints\\graph.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\graph.rs",
+              "RelativeToolTip": "engine_core\\src\\blueprints\\graph.rs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "tools.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor\\tools.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\editor\\tools.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor\\tools.rs",
+              "RelativeToolTip": "engine_core\\src\\editor\\tools.rs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "nodes.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\nodes.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\blueprints\\nodes.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\nodes.rs",
+              "RelativeToolTip": "engine_core\\src\\blueprints\\nodes.rs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "runtime.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\runtime.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\blueprints\\runtime.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints\\runtime.rs",
+              "RelativeToolTip": "engine_core\\src\\blueprints\\runtime.rs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "menus.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor\\menus.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\editor\\menus.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor\\menus.rs",
+              "RelativeToolTip": "engine_core\\src\\editor\\menus.rs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "blueprints.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\blueprints.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\blueprints.rs",
+              "RelativeToolTip": "engine_core\\src\\blueprints.rs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "plugins.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\plugins.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\plugins.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\plugins.rs",
+              "RelativeToolTip": "engine_core\\src\\plugins.rs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "editor.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\editor.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\editor.rs",
+              "RelativeToolTip": "engine_core\\src\\editor.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:13.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "runtime.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\runtime.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\runtime.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\runtime.rs",
+              "RelativeToolTip": "engine_core\\src\\runtime.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:14.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "modules.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\modules.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\modules.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\modules.rs",
+              "RelativeToolTip": "engine_core\\src\\modules.rs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:06:14.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cargo.toml",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\Cargo.toml",
+              "RelativeDocumentMoniker": "engine_core\\Cargo.toml",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\Cargo.toml",
+              "RelativeToolTip": "engine_core\\Cargo.toml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:57:53.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "submenu.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\submenu.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\submenu.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\submenu.rs",
+              "RelativeToolTip": "engine_core\\src\\submenu.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:00:34.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "logic_system.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\logic_system.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\logic_system.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\logic_system.rs",
+              "RelativeToolTip": "engine_core\\src\\logic_system.rs",
+              "ViewState": "AgIAAAYAAAAAAAAAAABBwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:00:34.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "feature_registry.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\feature_registry.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\feature_registry.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\feature_registry.rs",
+              "RelativeToolTip": "engine_core\\src\\feature_registry.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:00:34.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "modular_menu.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\modular_menu.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\modular_menu.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\modular_menu.rs",
+              "RelativeToolTip": "engine_core\\src\\modular_menu.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:00:34.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "statement_system.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\statement_system.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\statement_system.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\statement_system.rs",
+              "RelativeToolTip": "engine_core\\src\\statement_system.rs",
+              "ViewState": "AgIAAAYAAAAAAAAAAABBwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:00:34.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "main_menu.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\main_menu.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\main_menu.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\main_menu.rs",
+              "RelativeToolTip": "engine_core\\src\\main_menu.rs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T04:00:34.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Cargo.toml",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\Cargo.toml",
+              "RelativeDocumentMoniker": "Cargo.toml",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\Cargo.toml",
+              "RelativeToolTip": "Cargo.toml",
+              "ViewState": "AgIAAAsAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:11.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "physics.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\physics.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\physics.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\physics.rs",
+              "RelativeToolTip": "engine_core\\src\\physics.rs",
+              "ViewState": "AgIAABgAAAAAAAAAAIBJwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:09.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "tools.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\tools.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\tools.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\tools.rs",
+              "RelativeToolTip": "engine_core\\src\\tools.rs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:09.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "rendering.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\rendering.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\rendering.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\rendering.rs",
+              "RelativeToolTip": "engine_core\\src\\rendering.rs",
+              "ViewState": "AgIAABEAAAAAAAAAAIBJwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:09.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "game_logic.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\game_logic.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\game_logic.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\game_logic.rs",
+              "RelativeToolTip": "engine_core\\src\\game_logic.rs",
+              "ViewState": "AgIAABEAAAAAAAAAAIBJwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "scripting.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\scripting.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\scripting.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\scripting.rs",
+              "RelativeToolTip": "engine_core\\src\\scripting.rs",
+              "ViewState": "AgIAABEAAAAAAAAAAIBJwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ui.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ui.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\ui.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ui.rs",
+              "RelativeToolTip": "engine_core\\src\\ui.rs",
+              "ViewState": "AgIAABEAAAAAAAAAAIBJwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "scene.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\scene.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\scene.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\scene.rs",
+              "RelativeToolTip": "engine_core\\src\\scene.rs",
+              "ViewState": "AgIAABEAAAAAAAAAAIBJwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ecs.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ecs.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\ecs.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\ecs.rs",
+              "RelativeToolTip": "engine_core\\src\\ecs.rs",
+              "ViewState": "AgIAAB0AAAAAAAAAAIBJwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "input.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\input.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\input.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\input.rs",
+              "RelativeToolTip": "engine_core\\src\\input.rs",
+              "ViewState": "AgIAABkAAAAAAAAAAIBJwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "menus.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\menus.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\menus.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\menus.rs",
+              "RelativeToolTip": "engine_core\\src\\menus.rs",
+              "ViewState": "AgIAABEAAAAAAAAAAIBJwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:08.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "lib.rs",
+              "DocumentMoniker": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\lib.rs",
+              "RelativeDocumentMoniker": "engine_core\\src\\lib.rs",
+              "ToolTip": "C:\\Users\\Shadow\\source\\repos\\ArkansasIo\\test-game-engine-editer\\engine_core\\src\\lib.rs",
+              "RelativeToolTip": "engine_core\\src\\lib.rs",
+              "ViewState": "AgIAAC0AAAAAAAAAAIBJwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T03:58:01.006Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+﻿pub fn load_scene(name: &str) {
+    // Load a scene by name
+}
+
+pub fn save_scene(name: &str) {
+    // Save a scene by name
+}

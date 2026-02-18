@@ -1,0 +1,7 @@
+﻿pub fn initialize() {
+    // Initialize physics system
+}
+
+pub fn update_physics() {
+    // Update physics simulation
+}

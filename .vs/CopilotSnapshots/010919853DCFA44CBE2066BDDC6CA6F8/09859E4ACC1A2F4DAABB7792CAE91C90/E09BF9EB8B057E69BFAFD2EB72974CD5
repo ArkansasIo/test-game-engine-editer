@@ -1,0 +1,7 @@
+﻿pub fn initialize() {
+    // Initialize scripting system
+}
+
+pub fn run_script(script: &str) {
+    // Run a script
+}

@@ -1,0 +1,7 @@
+﻿pub fn add_statement(statement: &str) {
+    // Add a statement to the system
+}
+
+pub fn execute_statements() {
+    // Execute all statements
+}

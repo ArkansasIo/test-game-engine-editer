@@ -1,0 +1,10 @@
+C:\Users\Shadow\source\repos\ArkansasIo\test-game-engine-editer\target\debug\deps\icu_normalizer-9e8067fcd620e29f.d: C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs
+
+C:\Users\Shadow\source\repos\ArkansasIo\test-game-engine-editer\target\debug\deps\libicu_normalizer-9e8067fcd620e29f.rlib: C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs
+
+C:\Users\Shadow\source\repos\ArkansasIo\test-game-engine-editer\target\debug\deps\libicu_normalizer-9e8067fcd620e29f.rmeta: C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs
+
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\lib.rs:
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\properties.rs:
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\provider.rs:
+C:\Users\Shadow\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.1.1\src\uts46.rs:

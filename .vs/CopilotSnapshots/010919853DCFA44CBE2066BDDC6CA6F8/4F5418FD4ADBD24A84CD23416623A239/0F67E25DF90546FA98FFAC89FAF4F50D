@@ -1,0 +1,19 @@
+﻿// Unreal Engine 5-inspired Menus System
+
+/// Show a menu by name
+pub fn show_menu(menu_name: &str) {
+    // TODO: Implement menu display
+    println!("Showing menu: {}", menu_name);
+}
+
+/// Add a menu item
+pub fn add_menu_item(menu: &str, item: &str) {
+    // TODO: Implement menu item addition
+    println!("Adding item '{}' to menu '{}'.", item, menu);
+}
+
+/// Remove a menu item
+pub fn remove_menu_item(menu: &str, item: &str) {
+    // TODO: Implement menu item removal
+    println!("Removing item '{}' from menu '{}'.", item, menu);
+}

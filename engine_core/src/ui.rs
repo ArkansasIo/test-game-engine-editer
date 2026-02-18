@@ -1,0 +1,19 @@
+// Unreal Engine 5-inspired UI System
+
+/// Show all UI elements
+pub fn show_ui() {
+    // TODO: Implement UI rendering
+    println!("Showing UI elements.");
+}
+
+/// Add a UI widget
+pub fn add_widget(name: &str) {
+    // TODO: Implement widget addition
+    println!("Adding UI widget: {}", name);
+}
+
+/// Remove a UI widget
+pub fn remove_widget(name: &str) {
+    // TODO: Implement widget removal
+    println!("Removing UI widget: {}", name);
+}

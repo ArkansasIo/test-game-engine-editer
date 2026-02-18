@@ -1,0 +1,4 @@
+// Module system stub
+pub fn register_module(_name: &str) {
+    // Register a new engine module
+}
